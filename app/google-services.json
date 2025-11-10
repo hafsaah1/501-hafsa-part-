@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "1035151044793",
+    "project_id": "instaglow-62d6b",
+    "storage_bucket": "instaglow-62d6b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035151044793:android:8bf8779211a8bb1608eb68",
+        "android_client_info": {
+          "package_name": "com.example.beautyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035151044793-a68g72k6i68plt7da0jpok0v4mimgtab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.beautyapp",
+            "certificate_hash": "eb2bfb9b3afb14625bfc0daa325cdab01684fa4c"
+          }
+        },
+        {
+          "client_id": "1035151044793-1q5oj72a6p1moscapgqktab0e4llcdgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALLPh6HzjAWlE3cZ96IMP0e11x5wXkMyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035151044793-1q5oj72a6p1moscapgqktab0e4llcdgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035151044793:android:e4f7dfe4a079185e08eb68",
+        "android_client_info": {
+          "package_name": "com.example.weatherapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035151044793-i44g51sg97e1cdk1b45a9sdr71kmu8d9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weatherapi",
+            "certificate_hash": "8046fc7f1f8cf420a598c7232a42ac263a1554d3"
+          }
+        },
+        {
+          "client_id": "1035151044793-1q5oj72a6p1moscapgqktab0e4llcdgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALLPh6HzjAWlE3cZ96IMP0e11x5wXkMyA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035151044793-1q5oj72a6p1moscapgqktab0e4llcdgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

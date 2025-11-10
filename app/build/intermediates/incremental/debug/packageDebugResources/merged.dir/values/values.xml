@@ -15,6 +15,12 @@
     <string name="checkout">Checkout</string>
     <string name="clean_products">Clean Products</string>
     <string name="coming_soon">Coming soon...</string>
+    <string name="default_web_client_id" translatable="false">1035151044793-1q5oj72a6p1moscapgqktab0e4llcdgc.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1035151044793</string>
+    <string name="google_api_key" translatable="false">AIzaSyALLPh6HzjAWlE3cZ96IMP0e11x5wXkMyA</string>
+    <string name="google_app_id" translatable="false">1:1035151044793:android:8bf8779211a8bb1608eb68</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyALLPh6HzjAWlE3cZ96IMP0e11x5wXkMyA</string>
+    <string name="google_storage_bucket" translatable="false">instaglow-62d6b.firebasestorage.app</string>
     <string name="home">Home</string>
     <string name="like">Like</string>
     <string name="loading_products">Loading products...</string>
@@ -23,6 +29,7 @@
     <string name="products">Products</string>
     <string name="profile">Profile</string>
     <string name="profile_image">Profile</string>
+    <string name="project_id" translatable="false">instaglow-62d6b</string>
     <string name="special_for_you">Special for you</string>
     <string name="total">Total</string>
     <string name="view_all_products">View all products</string>

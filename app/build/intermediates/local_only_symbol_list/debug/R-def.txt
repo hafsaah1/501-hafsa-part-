@@ -7,6 +7,8 @@ color pink_400
 color pink_50
 color pink_500
 color white
+drawable facebook_logo
+drawable google_logo
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -18,6 +20,12 @@ string cart
 string checkout
 string clean_products
 string coming_soon
+string default_web_client_id
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
 string home
 string like
 string loading_products
@@ -26,6 +34,7 @@ string no_favorites_yet
 string products
 string profile
 string profile_image
+string project_id
 string special_for_you
 string total
 string view_all_products

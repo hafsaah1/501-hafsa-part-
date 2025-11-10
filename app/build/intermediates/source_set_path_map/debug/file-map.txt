@@ -1,51 +1,65 @@
-com.example.beautyapp-ui-test-manifest-1.6.1-0 /Users/auroraa/.gradle/caches/transforms-3/0c9c45b81fc6c9ad4dbf6095c495b266/transformed/ui-test-manifest-1.6.1/res
-com.example.beautyapp-coil-base-2.5.0-1 /Users/auroraa/.gradle/caches/transforms-3/1d0771e15cc8105a6d599b97749fc2af/transformed/coil-base-2.5.0/res
-com.example.beautyapp-material-icons-extended-release-2 /Users/auroraa/.gradle/caches/transforms-3/1dfd01fdccba4dae7d8c90fa206b4b4d/transformed/material-icons-extended-release/res
-com.example.beautyapp-ui-unit-release-3 /Users/auroraa/.gradle/caches/transforms-3/1e29b5e3ca601e6d605e7c2cfc506cab/transformed/ui-unit-release/res
-com.example.beautyapp-core-ktx-1.12.0-4 /Users/auroraa/.gradle/caches/transforms-3/26e2d70fa9e14165c2781f4da7a3aab7/transformed/core-ktx-1.12.0/res
-com.example.beautyapp-foundation-layout-release-5 /Users/auroraa/.gradle/caches/transforms-3/2dba80f454c2bf0b163a3ad8e6e1d9ad/transformed/foundation-layout-release/res
-com.example.beautyapp-ui-geometry-release-6 /Users/auroraa/.gradle/caches/transforms-3/2df42f9ecaeb573eca1de75f2ae02945/transformed/ui-geometry-release/res
-com.example.beautyapp-ui-text-release-7 /Users/auroraa/.gradle/caches/transforms-3/30c5919de4db9aa751b2a8ab264614c8/transformed/ui-text-release/res
-com.example.beautyapp-emoji2-1.3.0-8 /Users/auroraa/.gradle/caches/transforms-3/347ea0967b672fdfd00bbd6140e30080/transformed/emoji2-1.3.0/res
-com.example.beautyapp-lifecycle-livedata-core-2.7.0-9 /Users/auroraa/.gradle/caches/transforms-3/45d02d0d48bbe314114cb1360390f425/transformed/lifecycle-livedata-core-2.7.0/res
-com.example.beautyapp-savedstate-ktx-1.2.1-10 /Users/auroraa/.gradle/caches/transforms-3/4652180107297d1b68938eff4ae975f0/transformed/savedstate-ktx-1.2.1/res
-com.example.beautyapp-lifecycle-viewmodel-2.7.0-11 /Users/auroraa/.gradle/caches/transforms-3/4d92c82ab38d99eb159f20124b5be439/transformed/lifecycle-viewmodel-2.7.0/res
-com.example.beautyapp-lifecycle-runtime-compose-2.7.0-12 /Users/auroraa/.gradle/caches/transforms-3/4db0196e79fac1a5d54c0c8bd81958e9/transformed/lifecycle-runtime-compose-2.7.0/res
-com.example.beautyapp-material-icons-core-release-13 /Users/auroraa/.gradle/caches/transforms-3/5277175c09d41d360df24141ae184f40/transformed/material-icons-core-release/res
-com.example.beautyapp-lifecycle-viewmodel-ktx-2.7.0-14 /Users/auroraa/.gradle/caches/transforms-3/52d202473e5843b5e6b9dd7f30e72f84/transformed/lifecycle-viewmodel-ktx-2.7.0/res
-com.example.beautyapp-material3-release-15 /Users/auroraa/.gradle/caches/transforms-3/6714c83c55cc216c1cf042246c776a32/transformed/material3-release/res
-com.example.beautyapp-activity-ktx-1.8.2-16 /Users/auroraa/.gradle/caches/transforms-3/78d259b441d9d217489ae465be9f9e2d/transformed/activity-ktx-1.8.2/res
-com.example.beautyapp-savedstate-1.2.1-17 /Users/auroraa/.gradle/caches/transforms-3/8157ab961eed74c85d617809a04b9722/transformed/savedstate-1.2.1/res
-com.example.beautyapp-animation-release-18 /Users/auroraa/.gradle/caches/transforms-3/83a9324cd9d61e3f6c49981356880cb5/transformed/animation-release/res
-com.example.beautyapp-lifecycle-runtime-2.7.0-19 /Users/auroraa/.gradle/caches/transforms-3/87d9f6cf30a5b9f7ebd08fb2484a317a/transformed/lifecycle-runtime-2.7.0/res
-com.example.beautyapp-annotation-experimental-1.4.0-20 /Users/auroraa/.gradle/caches/transforms-3/89aa28505554502cdb958c8f485c3a7c/transformed/annotation-experimental-1.4.0/res
-com.example.beautyapp-core-runtime-2.2.0-21 /Users/auroraa/.gradle/caches/transforms-3/89fddfb36e16db218499d0b8680bb316/transformed/core-runtime-2.2.0/res
-com.example.beautyapp-ui-tooling-release-22 /Users/auroraa/.gradle/caches/transforms-3/8be0c465b0cbd49bc75d2bf766560b63/transformed/ui-tooling-release/res
-com.example.beautyapp-activity-compose-1.8.2-23 /Users/auroraa/.gradle/caches/transforms-3/8cf7d00d3618ff05719da65601a657fa/transformed/activity-compose-1.8.2/res
-com.example.beautyapp-material-release-24 /Users/auroraa/.gradle/caches/transforms-3/8f689636885c47fbd71ec3e520b93791/transformed/material-release/res
-com.example.beautyapp-ui-util-release-25 /Users/auroraa/.gradle/caches/transforms-3/9385216dd6c169674d7d51d28f62082b/transformed/ui-util-release/res
-com.example.beautyapp-material-ripple-release-26 /Users/auroraa/.gradle/caches/transforms-3/9bc66ed79b3fbed1a2c074c5af8a816b/transformed/material-ripple-release/res
-com.example.beautyapp-activity-1.8.2-27 /Users/auroraa/.gradle/caches/transforms-3/9cbe2958d029656006dfa479cff2bf52/transformed/activity-1.8.2/res
-com.example.beautyapp-animation-core-release-28 /Users/auroraa/.gradle/caches/transforms-3/a1a6fe8727183c0f1d758dce37d58040/transformed/animation-core-release/res
-com.example.beautyapp-ui-release-29 /Users/auroraa/.gradle/caches/transforms-3/a48e57d89d0af934c05408726b381af2/transformed/ui-release/res
-com.example.beautyapp-profileinstaller-1.3.1-30 /Users/auroraa/.gradle/caches/transforms-3/ad01d0dae26dc2835217e363eb7498bf/transformed/profileinstaller-1.3.1/res
-com.example.beautyapp-runtime-saveable-release-31 /Users/auroraa/.gradle/caches/transforms-3/b42e0b6b47817d08678c126241f7bf2c/transformed/runtime-saveable-release/res
-com.example.beautyapp-lifecycle-viewmodel-compose-2.7.0-32 /Users/auroraa/.gradle/caches/transforms-3/c46db9e92aae1b34a6e4af17558dc341/transformed/lifecycle-viewmodel-compose-2.7.0/res
-com.example.beautyapp-lifecycle-process-2.7.0-33 /Users/auroraa/.gradle/caches/transforms-3/c5a5e88b10101db71b02043cd4f59098/transformed/lifecycle-process-2.7.0/res
-com.example.beautyapp-lifecycle-viewmodel-savedstate-2.7.0-34 /Users/auroraa/.gradle/caches/transforms-3/cfba6aac35f6c16e0fa668b83cda1205/transformed/lifecycle-viewmodel-savedstate-2.7.0/res
-com.example.beautyapp-ui-graphics-release-35 /Users/auroraa/.gradle/caches/transforms-3/d8e01ced0bd2889be9ab08bf2027ff76/transformed/ui-graphics-release/res
-com.example.beautyapp-core-1.12.0-36 /Users/auroraa/.gradle/caches/transforms-3/d9df576dcaca9e76e24725bc3e0fc475/transformed/core-1.12.0/res
-com.example.beautyapp-foundation-release-37 /Users/auroraa/.gradle/caches/transforms-3/df6151d3a3ea00511bd3c5f8356e5692/transformed/foundation-release/res
-com.example.beautyapp-runtime-release-38 /Users/auroraa/.gradle/caches/transforms-3/e5571422436c510e234447ac4f5da131/transformed/runtime-release/res
-com.example.beautyapp-startup-runtime-1.1.1-39 /Users/auroraa/.gradle/caches/transforms-3/e6850f4de428ec33564b59ac8c943bf1/transformed/startup-runtime-1.1.1/res
-com.example.beautyapp-appcompat-resources-1.6.1-40 /Users/auroraa/.gradle/caches/transforms-3/e7006985deb784b8ab419c541575c54c/transformed/appcompat-resources-1.6.1/res
-com.example.beautyapp-ui-tooling-data-release-41 /Users/auroraa/.gradle/caches/transforms-3/e88a348da1eeb2f830dad547fd6366a0/transformed/ui-tooling-data-release/res
-com.example.beautyapp-customview-poolingcontainer-1.0.0-42 /Users/auroraa/.gradle/caches/transforms-3/ea47a44b8b867dd8ee001a899d420347/transformed/customview-poolingcontainer-1.0.0/res
-com.example.beautyapp-lifecycle-runtime-ktx-2.7.0-43 /Users/auroraa/.gradle/caches/transforms-3/ed4d20f84f7f2af7555cf830d48a515b/transformed/lifecycle-runtime-ktx-2.7.0/res
-com.example.beautyapp-ui-tooling-preview-release-44 /Users/auroraa/.gradle/caches/transforms-3/fe0143cb35f1bf52eba026eeca0cff19/transformed/ui-tooling-preview-release/res
-com.example.beautyapp-resValues-45 /Users/auroraa/Downloads/android-beauty-app 2/app/build/generated/res/resValues/debug
-com.example.beautyapp-packageDebugResources-46 /Users/auroraa/Downloads/android-beauty-app 2/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.example.beautyapp-packageDebugResources-47 /Users/auroraa/Downloads/android-beauty-app 2/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.example.beautyapp-merged_res-48 /Users/auroraa/Downloads/android-beauty-app 2/app/build/intermediates/merged_res/debug
-com.example.beautyapp-debug-49 /Users/auroraa/Downloads/android-beauty-app 2/app/src/debug/res
-com.example.beautyapp-main-50 /Users/auroraa/Downloads/android-beauty-app 2/app/src/main/res
+com.example.beautyapp-lifecycle-runtime-ktx-2.7.0-0 /Users/auroraa/.gradle/caches/transforms-3/002c32b27fadebabe6c873ac6bc18e1e/transformed/lifecycle-runtime-ktx-2.7.0/res
+com.example.beautyapp-play-services-auth-21.2.0-1 /Users/auroraa/.gradle/caches/transforms-3/005cb16d881443441eed9bac3d373ebc/transformed/play-services-auth-21.2.0/res
+com.example.beautyapp-ui-geometry-release-2 /Users/auroraa/.gradle/caches/transforms-3/02c7559b3c7050d0052c97a90aac2954/transformed/ui-geometry-release/res
+com.example.beautyapp-animation-core-release-3 /Users/auroraa/.gradle/caches/transforms-3/0b236360de91bbe675b8aaf869b36542/transformed/animation-core-release/res
+com.example.beautyapp-lifecycle-viewmodel-savedstate-2.7.0-4 /Users/auroraa/.gradle/caches/transforms-3/116db808d708b036223737286a325ae1/transformed/lifecycle-viewmodel-savedstate-2.7.0/res
+com.example.beautyapp-ui-text-release-5 /Users/auroraa/.gradle/caches/transforms-3/19fa7010e9ea263af9baed75f1ca13a8/transformed/ui-text-release/res
+com.example.beautyapp-foundation-layout-release-6 /Users/auroraa/.gradle/caches/transforms-3/24597410597ce2f41bfabb68d1bd1b5f/transformed/foundation-layout-release/res
+com.example.beautyapp-ui-test-manifest-1.6.1-7 /Users/auroraa/.gradle/caches/transforms-3/2c158df80f2824ed41d7bd2c4b6d59f9/transformed/ui-test-manifest-1.6.1/res
+com.example.beautyapp-material-icons-core-release-8 /Users/auroraa/.gradle/caches/transforms-3/33daf0b147feae3298b35f93389b37e4/transformed/material-icons-core-release/res
+com.example.beautyapp-annotation-experimental-1.4.0-9 /Users/auroraa/.gradle/caches/transforms-3/369ad49732125b130e3326b125eff101/transformed/annotation-experimental-1.4.0/res
+com.example.beautyapp-lifecycle-viewmodel-2.7.0-10 /Users/auroraa/.gradle/caches/transforms-3/3a51e167e684d63bff0ad4c2ea5396aa/transformed/lifecycle-viewmodel-2.7.0/res
+com.example.beautyapp-animation-release-11 /Users/auroraa/.gradle/caches/transforms-3/47d16cd921b0579edd515ae9ad02abec/transformed/animation-release/res
+com.example.beautyapp-credentials-1.2.0-rc01-12 /Users/auroraa/.gradle/caches/transforms-3/4b2f9937acd54a6c864287810c4267ea/transformed/credentials-1.2.0-rc01/res
+com.example.beautyapp-ui-graphics-release-13 /Users/auroraa/.gradle/caches/transforms-3/4bb2572b11ea98a7c2afd89fe9b52da7/transformed/ui-graphics-release/res
+com.example.beautyapp-savedstate-1.2.1-14 /Users/auroraa/.gradle/caches/transforms-3/4e6d2272d17cfb35bd74fc41c8fcc952/transformed/savedstate-1.2.1/res
+com.example.beautyapp-ui-util-release-15 /Users/auroraa/.gradle/caches/transforms-3/5633e7d48d27eba271be51138ff12334/transformed/ui-util-release/res
+com.example.beautyapp-navigation-common-ktx-2.7.7-16 /Users/auroraa/.gradle/caches/transforms-3/58d716598ffcb7f5ec74515c9f993009/transformed/navigation-common-ktx-2.7.7/res
+com.example.beautyapp-material-ripple-release-17 /Users/auroraa/.gradle/caches/transforms-3/5aa9fd230c283f891b83032851c90ed9/transformed/material-ripple-release/res
+com.example.beautyapp-core-ktx-1.12.0-18 /Users/auroraa/.gradle/caches/transforms-3/5ca5aff1b6ddebdf63afc7042253132c/transformed/core-ktx-1.12.0/res
+com.example.beautyapp-activity-ktx-1.8.2-19 /Users/auroraa/.gradle/caches/transforms-3/5fcd2821cd51185585715cce5b56cc61/transformed/activity-ktx-1.8.2/res
+com.example.beautyapp-lifecycle-runtime-2.7.0-20 /Users/auroraa/.gradle/caches/transforms-3/6c6ad8442595d7d845c0220468f638b7/transformed/lifecycle-runtime-2.7.0/res
+com.example.beautyapp-customview-poolingcontainer-1.0.0-21 /Users/auroraa/.gradle/caches/transforms-3/72001e49813a38497c61b20c7dba6ae3/transformed/customview-poolingcontainer-1.0.0/res
+com.example.beautyapp-ui-tooling-preview-release-22 /Users/auroraa/.gradle/caches/transforms-3/7f46c653676b9a748b371347d091007f/transformed/ui-tooling-preview-release/res
+com.example.beautyapp-credentials-play-services-auth-1.2.0-rc01-23 /Users/auroraa/.gradle/caches/transforms-3/8fa7364205f501b69eddd317a71a991a/transformed/credentials-play-services-auth-1.2.0-rc01/res
+com.example.beautyapp-navigation-runtime-2.7.7-24 /Users/auroraa/.gradle/caches/transforms-3/911d1034e5e86c7b25fff93b12e0c0db/transformed/navigation-runtime-2.7.7/res
+com.example.beautyapp-lifecycle-viewmodel-compose-2.7.0-25 /Users/auroraa/.gradle/caches/transforms-3/927ba3ab1affec1a9bb23882277f1f5c/transformed/lifecycle-viewmodel-compose-2.7.0/res
+com.example.beautyapp-ui-unit-release-26 /Users/auroraa/.gradle/caches/transforms-3/93e60f71164d218dda195bf40913a903/transformed/ui-unit-release/res
+com.example.beautyapp-material-icons-extended-release-27 /Users/auroraa/.gradle/caches/transforms-3/9685b0a6949a9691f6ecae353d914e20/transformed/material-icons-extended-release/res
+com.example.beautyapp-startup-runtime-1.1.1-28 /Users/auroraa/.gradle/caches/transforms-3/972ab870a809ae28f4584303adb7a0e6/transformed/startup-runtime-1.1.1/res
+com.example.beautyapp-coil-base-2.5.0-29 /Users/auroraa/.gradle/caches/transforms-3/a360a11ceb7dd3e4044bb10c33ebae4e/transformed/coil-base-2.5.0/res
+com.example.beautyapp-lifecycle-process-2.7.0-30 /Users/auroraa/.gradle/caches/transforms-3/a79795b22652ba2b868d02a2de9511d9/transformed/lifecycle-process-2.7.0/res
+com.example.beautyapp-play-services-base-18.3.0-31 /Users/auroraa/.gradle/caches/transforms-3/ab123e5822a4107059e62bcf23d94aa0/transformed/play-services-base-18.3.0/res
+com.example.beautyapp-activity-compose-1.8.2-32 /Users/auroraa/.gradle/caches/transforms-3/ab8270e4f905b7b769741297baf46f4e/transformed/activity-compose-1.8.2/res
+com.example.beautyapp-navigation-runtime-ktx-2.7.7-33 /Users/auroraa/.gradle/caches/transforms-3/ad7bf6f6304e6dd1046e9c200ca6aee0/transformed/navigation-runtime-ktx-2.7.7/res
+com.example.beautyapp-fragment-1.5.7-34 /Users/auroraa/.gradle/caches/transforms-3/ae04d15f06b3e7927bcaa4360648ce70/transformed/fragment-1.5.7/res
+com.example.beautyapp-firebase-common-21.0.0-35 /Users/auroraa/.gradle/caches/transforms-3/af3077548d0c85dd8ca7b227469a42b6/transformed/firebase-common-21.0.0/res
+com.example.beautyapp-lifecycle-runtime-compose-2.7.0-36 /Users/auroraa/.gradle/caches/transforms-3/af5f61c0e54972c1203d1d3949cd1631/transformed/lifecycle-runtime-compose-2.7.0/res
+com.example.beautyapp-runtime-saveable-release-37 /Users/auroraa/.gradle/caches/transforms-3/ba42fb3b7dd4728cd2eb2b89c401723b/transformed/runtime-saveable-release/res
+com.example.beautyapp-foundation-release-38 /Users/auroraa/.gradle/caches/transforms-3/bc87438ec3a4f624616ae013369ca23b/transformed/foundation-release/res
+com.example.beautyapp-runtime-release-39 /Users/auroraa/.gradle/caches/transforms-3/bf3378f34d26713ef575ff5efd10e795/transformed/runtime-release/res
+com.example.beautyapp-savedstate-ktx-1.2.1-40 /Users/auroraa/.gradle/caches/transforms-3/bf341fb0ccdb662afb604f4de9aa9d09/transformed/savedstate-ktx-1.2.1/res
+com.example.beautyapp-ui-tooling-release-41 /Users/auroraa/.gradle/caches/transforms-3/c1872a4f7ee8759564236b7416e38751/transformed/ui-tooling-release/res
+com.example.beautyapp-lifecycle-livedata-core-2.7.0-42 /Users/auroraa/.gradle/caches/transforms-3/c6b3b9c058e6fe3aae4c5664833d687f/transformed/lifecycle-livedata-core-2.7.0/res
+com.example.beautyapp-emoji2-1.3.0-43 /Users/auroraa/.gradle/caches/transforms-3/cc05ab363e9355993f90d2b12fc0f8d6/transformed/emoji2-1.3.0/res
+com.example.beautyapp-navigation-common-2.7.7-44 /Users/auroraa/.gradle/caches/transforms-3/cc7aed398156844abd2739266dcf88d6/transformed/navigation-common-2.7.7/res
+com.example.beautyapp-material-release-45 /Users/auroraa/.gradle/caches/transforms-3/ccf64a89355abff849fd589e87719b4a/transformed/material-release/res
+com.example.beautyapp-ui-tooling-data-release-46 /Users/auroraa/.gradle/caches/transforms-3/cd0153fe1b8afb72b916c52e07c66808/transformed/ui-tooling-data-release/res
+com.example.beautyapp-navigation-compose-2.7.7-47 /Users/auroraa/.gradle/caches/transforms-3/cf7f93389625cd123e434e60e8445520/transformed/navigation-compose-2.7.7/res
+com.example.beautyapp-browser-1.4.0-48 /Users/auroraa/.gradle/caches/transforms-3/d03e672d6f805faec712caae82117d07/transformed/browser-1.4.0/res
+com.example.beautyapp-ui-release-49 /Users/auroraa/.gradle/caches/transforms-3/dedcabed939334467cedaca7514ed2db/transformed/ui-release/res
+com.example.beautyapp-activity-1.8.2-50 /Users/auroraa/.gradle/caches/transforms-3/e74ff7fdf39890fed49ad5a98583b87f/transformed/activity-1.8.2/res
+com.example.beautyapp-material3-release-51 /Users/auroraa/.gradle/caches/transforms-3/eb8c538d8b3c3926a077e29869454d22/transformed/material3-release/res
+com.example.beautyapp-play-services-basement-18.3.0-52 /Users/auroraa/.gradle/caches/transforms-3/ef4cfd717c5bcc5dddf6b3cb8f4f7dcf/transformed/play-services-basement-18.3.0/res
+com.example.beautyapp-core-runtime-2.2.0-53 /Users/auroraa/.gradle/caches/transforms-3/ef731b0e29b88e074e300c8ddc343aad/transformed/core-runtime-2.2.0/res
+com.example.beautyapp-profileinstaller-1.3.1-54 /Users/auroraa/.gradle/caches/transforms-3/efdd4bb5c06ca9b0f1c9096600b7d6db/transformed/profileinstaller-1.3.1/res
+com.example.beautyapp-core-1.12.0-55 /Users/auroraa/.gradle/caches/transforms-3/f0829b4592db7e9cd8a5015323ec0c02/transformed/core-1.12.0/res
+com.example.beautyapp-lifecycle-viewmodel-ktx-2.7.0-56 /Users/auroraa/.gradle/caches/transforms-3/fa5f293edc850b6b5387fa50448c0455/transformed/lifecycle-viewmodel-ktx-2.7.0/res
+com.example.beautyapp-appcompat-resources-1.6.1-57 /Users/auroraa/.gradle/caches/transforms-3/fe446b521e8c9a99149b365e848e2263/transformed/appcompat-resources-1.6.1/res
+com.example.beautyapp-res-58 /Users/auroraa/Downloads/android-beauty-app 2/app/build/generated/res/processDebugGoogleServices
+com.example.beautyapp-resValues-59 /Users/auroraa/Downloads/android-beauty-app 2/app/build/generated/res/resValues/debug
+com.example.beautyapp-packageDebugResources-60 /Users/auroraa/Downloads/android-beauty-app 2/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.beautyapp-packageDebugResources-61 /Users/auroraa/Downloads/android-beauty-app 2/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.beautyapp-merged_res-62 /Users/auroraa/Downloads/android-beauty-app 2/app/build/intermediates/merged_res/debug
+com.example.beautyapp-debug-63 /Users/auroraa/Downloads/android-beauty-app 2/app/src/debug/res
+com.example.beautyapp-main-64 /Users/auroraa/Downloads/android-beauty-app 2/app/src/main/res

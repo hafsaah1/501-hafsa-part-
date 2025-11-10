@@ -1,22 +1,30 @@
 [
     {
-        "merged": "com.example.beautyapp-merged_res-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.beautyapp-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.beautyapp-merged_res-63:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.beautyapp-main-65:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.beautyapp-merged_res-49:/mipmap-hdpi_ic_launcher_foreground.xml.flat",
-        "source": "com.example.beautyapp-main-51:/mipmap-hdpi/ic_launcher_foreground.xml"
+        "merged": "com.example.beautyapp-merged_res-63:/drawable_google_logo.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/google_logo.png"
     },
     {
-        "merged": "com.example.beautyapp-merged_res-49:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.beautyapp-main-51:/xml/data_extraction_rules.xml"
+        "merged": "com.example.beautyapp-merged_res-63:/mipmap-hdpi_ic_launcher_foreground.xml.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-hdpi/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.beautyapp-merged_res-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.beautyapp-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.beautyapp-merged_res-63:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.beautyapp-merged_res-49:/xml_backup_rules.xml.flat",
-        "source": "com.example.beautyapp-main-51:/xml/backup_rules.xml"
+        "merged": "com.example.beautyapp-merged_res-63:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.beautyapp-merged_res-63:/xml_backup_rules.xml.flat",
+        "source": "com.example.beautyapp-main-65:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.beautyapp-merged_res-63:/drawable_facebook_logo.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/facebook_logo.png"
     }
 ]
