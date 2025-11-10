@@ -1,6 +1,5 @@
 package com.example.beautyapp
 
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -9,8 +8,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.LocalContext // Add this import
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -29,57 +31,72 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BeautyAppTheme {
-                val navController = rememberNavController()
+                AppNavigation()
+            }
+        }
+    }
+}
 
-                NavHost(
-                    navController = navController,
-                    startDestination = "login"
-                ) {
-                    // Login Screen
-                    composable("login") {
-                        LoginScreen(
-                            onLoginSuccess = { userName ->
-                                Log.d("MainActivity", "onLoginSuccess called with: $userName")
-                                navController.navigate("main/$userName") {
-                                    popUpTo("login") { inclusive = true }
-                                }
-                            },
-                            onRegisterClick = {
-                                navController.navigate("signup")
-                            }
-                        )
+@Composable
+fun AppNavigation() {
+    val navController = rememberNavController()
+    val auth = FirebaseAuth.getInstance()
+    val context = LocalContext.current // Get context here
+
+    LaunchedEffect(key1 = Unit) {
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            Log.d("AppNavigation", "User already logged in: ${currentUser.displayName}")
+            navController.navigate("main/${currentUser.displayName ?: "User"}") {
+                popUpTo("login") { inclusive = true }
+            }
+        }
+    }
+
+    NavHost(
+        navController = navController,
+        startDestination = "login"
+    ) {
+        composable("login") {
+            LoginScreen(
+                onLoginSuccess = { userName ->
+                    Log.d("AppNavigation", "onLoginSuccess called with: $userName")
+                    navController.navigate("main/$userName") {
+                        popUpTo("login") { inclusive = true }
                     }
+                },
+                onRegisterClick = {
+                    navController.navigate("signup")
+                }
+            )
+        }
 
-                    // Sign Up Screen
-                    composable("signup") {
-                        SignUpScreen(
-                            onSignUpSuccess = {
-                                navController.popBackStack()
-                            },
-                            onLoginClick = {
-                                navController.popBackStack()
-                            }
-                        )
-                    }
+        composable("signup") {
+            SignUpScreen(
+                onSignUpSuccess = {
+                    navController.popBackStack()
+                },
+                onLoginClick = {
+                    navController.popBackStack()
+                }
+            )
+        }
 
-                    // Main Beauty App (after login)
-                    composable("main/{userName}") { backStackEntry ->
-                        val userName = backStackEntry.arguments?.getString("userName") ?: "User"
-                        Log.d("MainActivity", "Navigated to main screen with: $userName")
+        composable("main/{userName}") { backStackEntry ->
+            val userName = backStackEntry.arguments?.getString("userName") ?: "User"
+            Log.d("AppNavigation", "Navigated to main with: $userName")
 
-                        BeautyApp(
-                            context = this@MainActivity,
-                            userName = userName,
-                            onLogout = {
-                                FirebaseAuth.getInstance().signOut()
-                                navController.navigate("login") {
-                                    popUpTo(0) { inclusive = true }
-                                }
-                            }
-                        )
+            BeautyApp(
+                // FIX: Pass the context obtained from LocalContext.current
+                context = context as ComponentActivity,
+                userName = userName,
+                onLogout = {
+                    FirebaseAuth.getInstance().signOut()
+                    navController.navigate("login") {
+                        popUpTo(0) { inclusive = true }
                     }
                 }
-            }
+            )
         }
     }
 }
@@ -97,7 +114,6 @@ fun BeautyApp(
     var selectedTab by remember { mutableStateOf(0) }
     var showLogoutDialog by remember { mutableStateOf(false) }
 
-    // Logout confirmation dialog
     if (showLogoutDialog) {
         AlertDialog(
             onDismissRequest = { showLogoutDialog = false },
@@ -119,7 +135,6 @@ fun BeautyApp(
         )
     }
 
-    // Show product detail if a product is selected
     if (selectedProduct != null) {
         ProductDetailScreen(
             product = selectedProduct!!,
@@ -131,7 +146,6 @@ fun BeautyApp(
             onBack = { selectedProduct = null }
         )
     } else {
-        // Main app with navigation
         Scaffold(
             bottomBar = {
                 BottomNavBar(
@@ -160,7 +174,6 @@ fun BeautyApp(
             Box(modifier = Modifier.padding(paddingValues)) {
                 when (selectedTab) {
                     0 -> {
-                        // Home Tab - Weather Screen
                         WeatherScreen(
                             modifier = Modifier.fillMaxSize(),
                             context = context,
@@ -168,7 +181,6 @@ fun BeautyApp(
                         )
                     }
                     1 -> {
-                        // Products Tab
                         ProductsScreen(
                             products = productViewModel.getDisplayProducts(),
                             likedProducts = productState.likedProducts,
@@ -187,7 +199,6 @@ fun BeautyApp(
                         )
                     }
                     2 -> {
-                        // AR Scan Tab
                         Box(
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.Center
@@ -196,7 +207,6 @@ fun BeautyApp(
                         }
                     }
                     3 -> {
-                        // Cart Tab
                         CartScreen(
                             cartItems = productState.cartItems,
                             products = productState.products,
@@ -205,7 +215,6 @@ fun BeautyApp(
                         )
                     }
                     4 -> {
-                        // Profile Tab - Show user info and liked products
                         ProfileScreen(
                             userName = userName,
                             likedProducts = productState.products.filter {
