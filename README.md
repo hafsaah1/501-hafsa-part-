@@ -27,10 +27,35 @@ This project demonstrates several key Android development concepts:
 
 ## 📁 Project Structure
 
-app/src/main/java/com/example/beautyapp/ ├── MainActivity.kt # Main entry point, handles navigation ├── data/ │ ├── Product.kt # Product data model │ └── weather/ │ └── Weather.kt # Data models for weather ├── network/ │ ├── MakeupApiService.kt # Retrofit service for Makeup API │ ├── WeatherApi.kt # Retrofit service for Weather API │ └── WeatherApiService.kt ├── viewmodel/ │ ├── MainViewModel.kt # ViewModel for products, cart, likes │ └── WeatherViewModel.kt # ViewModel for fetching weather ├── ui/ │ ├── components/ │ │ ├── BottomNavBar.kt # Custom bottom navigation bar │ │ ├── FilterBottomSheet.kt # Composable for filtering products │ │ └── ProductCard.kt # Card for displaying a single product │ ├── screens/ │ │ ├── CartScreen.kt # Shopping cart screen │ │ ├── LoginScreen.kt # User login screen │ │ ├── ProductDetailScreen.kt # Product detail view │ │ ├── ProductsScreen.kt # Product grid screen │ │ ├── ProfileScreen.kt # User profile and favorites │ │ ├── SignUpScreen.kt # User registration screen │ │ └── WeatherScreen.kt # Main "Home" screen with weather │ └── theme/ │ ├── Theme.kt │ └── Typography.kt
+* **`app/src/main/java/com/example/beautyapp/`**
+    * `MainActivity.kt`: Main entry point, handles navigation
+    * **`data/`**
+        * `Product.kt`: Product data model
+        * `weather/`: Data models for weather
+    * **`network/`**
+        * `MakeupApiService.kt`: Retrofit service for Makeup API
+        * `WeatherApi.kt`: Retrofit service for Weather API
+        * `WeatherApiService.kt`
+    * **`viewmodel/`**
+        * `MainViewModel.kt`: ViewModel for products, cart, likes
+        * `WeatherViewModel.kt`: ViewModel for fetching weather
+    * **`ui/`**
+        * **`components/`**
+            * `BottomNavBar.kt`: Custom bottom navigation bar
+            * `FilterBottomSheet.kt`: Composable for filtering products
+            * `ProductCard.kt`: Card for displaying a single product
+        * **`screens/`**
+            * `CartScreen.kt`: Shopping cart screen
+            * `LoginScreen.kt`: User login screen
+            * `ProductDetailScreen.kt`: Product detail view
+            * `ProductsScreen.kt`: Product grid screen
+            * `ProfileScreen.kt`: User profile and favorites
+            * `SignUpScreen.kt`: User registration screen
+            * `WeatherScreen.kt`: Main "Home" screen with weather
+        * **`theme/`**
+            * `Theme.kt`
+            * `Typography.kt`
 
-
-## 🚀 Getting Started
 
 ### Prerequisites
 
