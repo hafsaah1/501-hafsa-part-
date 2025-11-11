@@ -164,6 +164,11 @@ The app fetches products from:
 https://makeup-api.herokuapp.com/api/v1/products.json
 ```
 
+## Android YouTube Player 
+```
+https://github.com/PierfrancescoSoffritti/android-youtube-player
+```
+
 ## 🐛 Troubleshooting
 
 ### API Not Loading
