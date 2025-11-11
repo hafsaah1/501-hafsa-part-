@@ -2,7 +2,8 @@
 
 This is a Kotlin/Android Beauty App built with Jetpack Compose. It integrates **Firebase Authentication**, a **live weather forecast** (from the OpenWeatherMap API), product browsing (from the Makeup API), and a local shopping cart.
 
-## 🎨 Features
+## DEMO 1 nov 4,2025
+## Features
 
 * **Firebase Authentication**: Full login and sign-up screen flow.
 * **Weather Home Screen**: The main "home" screen (`WeatherScreen.kt`) greets the logged-in user and displays a live weather card for their location.
@@ -15,7 +16,7 @@ This is a Kotlin/Android Beauty App built with Jetpack Compose. It integrates **
 * **Profile Screen**: A dedicated screen (`ProfileScreen.kt`) for user information and liked items.
 * **Bottom Navigation**: A custom `BottomNavBar.kt` with an elevated, central "AI Scan" button.
 
-## 🎯 Core Technical Features
+## Core Technical Features
 
 This project demonstrates several key Android development concepts:
 
@@ -25,7 +26,7 @@ This project demonstrates several key Android development concepts:
     1.  The **Makeup API** to fetch product data in `MainViewModel`.
     2.  The **OpenWeatherMap API** to fetch live weather data in `WeatherViewModel`.
 
-## 📁 Project Structure
+## Project Structure
 
 * **`app/src/main/java/com/example/beautyapp/`**
     * `MainActivity.kt`: Main entry point, handles navigation
@@ -73,7 +74,7 @@ This project demonstrates several key Android development concepts:
 4.  **Sync Gradle**: Click "Sync Project with Gradle Files".
 5.  **Run the app**: Connect an Android device or start an emulator and click "Run".
 
-## 📦 Key Dependencies
+## Key Dependencies
 
 * **Jetpack Compose**: Modern UI toolkit
 * **Material3**: Material Design 3 components
@@ -83,7 +84,7 @@ This project demonstrates several key Android development concepts:
 * **Coroutines & ViewModel**: For asynchronous operations and state management
 * **Android YouTube Player**: For embedding YouTube videos
 
-## 📱 APIs Used
+## APIs Used
 
 * **Makeup API**: `https://makeup-api.herokuapp.com/api/v1/products.json`
 * **OpenWeatherMap API**: For fetching live weather data.
