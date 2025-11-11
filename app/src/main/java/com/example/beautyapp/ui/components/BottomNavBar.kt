@@ -74,7 +74,7 @@ fun BottomNavBar(
                 Box(
                     modifier = Modifier
                         .size(56.dp)
-                        .offset(y = (-8).dp)
+                        .offset(y = (-6).dp)
                         .clip(CircleShape)
                         .background(MaterialTheme.colorScheme.primary),
                     contentAlignment = Alignment.Center

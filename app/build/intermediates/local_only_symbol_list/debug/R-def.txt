@@ -8,9 +8,12 @@ color pink_400
 color pink_50
 color pink_500
 color white
+drawable blush
 drawable facebook_logo
+drawable foundation
 drawable google_logo
 drawable ic_launcher_background
+drawable lipstick
 id youtube_player_view
 layout mainlayout
 mipmap ic_launcher

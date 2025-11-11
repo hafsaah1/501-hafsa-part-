@@ -30,6 +30,20 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.material.ripple.rememberRipple
+// Added imports:
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.graphics.Brush
+import com.example.beautyapp.R // Make sure this R import is here
+
+// A simple class to hold all 4 pieces of video info
+private data class VideoInfo(
+    val topic: String,
+    val duration: String,
+    val videoId: String,
+    val thumbnailResId: Int
+)
 @Composable
 fun WeatherScreen(
     modifier: Modifier = Modifier,
@@ -519,29 +533,34 @@ fun EmbeddedYouTubePlayer(
     }
 }
 
+//  ************************************************
+//  THIS IS THE UPDATED FUNCTION
+//  ************************************************
 @Composable
 fun VideoCardPlaceHolder(
     context: ComponentActivity,
     onVideoClick: (String) -> Unit
 ) {
+    // UPDATED: Now uses the VideoInfo data class
     val beautyVideos = listOf(
-        Triple("Foundation Tips", "2 min", "hkQhA6lmDME"),
-    Triple("Blush Tutorial", "3 min", "5wx1U64ez14"),
-    Triple("Contour Guide", "4 min", "QKz_2ScpV9s"),
-    Triple("Eye Makeup", "5 min", "tTV6vZCKEWM"),
-    Triple("Lipstick", "2 min", "ay1EH7uQjG0")
+        VideoInfo("Foundation Tips", "2 min", "hkQhA6lmDME", R.drawable.foundation),
+        VideoInfo("Blush Tutorial", "3 min", "5wx1U64ez14", R.drawable.blush),
+        VideoInfo("Contour Guide", "4 min", "QKz_2ScpV9s", R.drawable.foundation), // Placeholder
+        VideoInfo("Eye Makeup", "5 min", "tTV6vZCKEWM", R.drawable.foundation), // Placeholder
+        VideoInfo("Lipstick", "2 min", "ay1EH7uQjG0", R.drawable.lipstick)
     )
-
 
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(beautyVideos.size) { index ->
-            val (topic, duration, videoId) = beautyVideos[index]
+            // Destructure the data class - this is now correct
+            val (topic, duration, videoId, thumbnailResId) = beautyVideos[index]
+
             Card(
                 modifier = Modifier
-                    .width(300.dp)
-                    .height(400.dp)
+                    .width(220.dp)
+                    .height(300.dp)
                     .clickable(
                         indication = rememberRipple(),
                         interactionSource = remember { MutableInteractionSource() }
@@ -552,15 +571,43 @@ fun VideoCardPlaceHolder(
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
             ) {
                 Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
+                    modifier = Modifier.fillMaxSize()
                 ) {
+                    // 1. The Thumbnail Image
+                    Image(
+                        painter = painterResource(id = thumbnailResId),
+                        contentDescription = topic,
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+
+                    // 2. Dark gradient
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(
+                                Brush.verticalGradient(
+                                    colors = listOf(
+                                        Color.Transparent,
+                                        Color.Black.copy(alpha = 0.5f),
+                                        Color.Black.copy(alpha = 0.8f)
+                                    ),
+                                    startY = 300f
+                                )
+                            )
+                    )
+
+                    // 3. Your existing content
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.padding(16.dp)
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(12.dp)
                     ) {
+                        // Duration Badge
                         Row(
                             modifier = Modifier
+                                .align(Alignment.End)
                                 .clip(RoundedCornerShape(16.dp))
                                 .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.9f))
                                 .padding(horizontal = 12.dp, vertical = 6.dp),
@@ -578,6 +625,7 @@ fun VideoCardPlaceHolder(
 
                         Spacer(modifier = Modifier.weight(1f))
 
+                        // Play Button
                         Box(
                             modifier = Modifier
                                 .size(56.dp)
@@ -594,12 +642,13 @@ fun VideoCardPlaceHolder(
 
                         Spacer(modifier = Modifier.height(12.dp))
 
+                        // Topic Title
                         Text(
                             text = topic,
                             fontSize = 14.sp,
                             fontWeight = FontWeight.SemiBold,
                             textAlign = TextAlign.Center,
-                            color = MaterialTheme.colorScheme.onSecondaryContainer
+                            color = Color.White
                         )
                     }
                 }
