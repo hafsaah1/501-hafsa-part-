@@ -71,9 +71,12 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
-    // Firebase Authentication
-    implementation("com.google.firebase:firebase-auth:23.0.0")
-    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    // Firebase - ADD THIS BOM FIRST!
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Google Sign-In
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     // Networking - Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

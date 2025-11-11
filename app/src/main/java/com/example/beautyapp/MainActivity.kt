@@ -1,5 +1,5 @@
 package com.example.beautyapp
-
+import androidx.compose.ui.platform.LocalContext
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -8,11 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.platform.LocalContext // Add this import
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -29,9 +26,31 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
             BeautyAppTheme {
-                AppNavigation()
+                // Simple state check without LaunchedEffect
+                val auth = FirebaseAuth.getInstance()
+                val currentUser = auth.currentUser
+                val isLoggedIn = currentUser != null
+
+                Log.d("MainActivity", "onCreate - isLoggedIn: $isLoggedIn, user: ${currentUser?.displayName}")
+
+                if (isLoggedIn) {
+                    // User is logged in, go straight to main screen
+                    BeautyApp(
+                        context = this@MainActivity,
+                        userName = currentUser?.displayName ?: "User",
+                        onLogout = {
+                            FirebaseAuth.getInstance().signOut()
+                            // Restart activity to go back to login
+                            recreate()
+                        }
+                    )
+                } else {
+                    // Not logged in, show login/navigation
+                    AppNavigation()
+                }
             }
         }
     }
@@ -40,18 +59,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    val auth = FirebaseAuth.getInstance()
-    val context = LocalContext.current // Get context here
-
-    LaunchedEffect(key1 = Unit) {
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            Log.d("AppNavigation", "User already logged in: ${currentUser.displayName}")
-            navController.navigate("main/${currentUser.displayName ?: "User"}") {
-                popUpTo("login") { inclusive = true }
-            }
-        }
-    }
 
     NavHost(
         navController = navController,
@@ -60,7 +67,7 @@ fun AppNavigation() {
         composable("login") {
             LoginScreen(
                 onLoginSuccess = { userName ->
-                    Log.d("AppNavigation", "onLoginSuccess called with: $userName")
+                    Log.d("AppNavigation", "Login success: $userName")
                     navController.navigate("main/$userName") {
                         popUpTo("login") { inclusive = true }
                     }
@@ -84,11 +91,11 @@ fun AppNavigation() {
 
         composable("main/{userName}") { backStackEntry ->
             val userName = backStackEntry.arguments?.getString("userName") ?: "User"
-            Log.d("AppNavigation", "Navigated to main with: $userName")
+            Log.d("AppNavigation", "Showing main for: $userName")
 
+            val context = LocalContext.current as ComponentActivity
             BeautyApp(
-                // FIX: Pass the context obtained from LocalContext.current
-                context = context as ComponentActivity,
+                context = context,
                 userName = userName,
                 onLogout = {
                     FirebaseAuth.getInstance().signOut()
@@ -140,9 +147,7 @@ fun BeautyApp(
             product = selectedProduct!!,
             isLiked = productState.likedProducts.contains(selectedProduct!!.id),
             onToggleLike = { productViewModel.toggleLike(it) },
-            onAddToCart = {
-                productViewModel.addToCart(it)
-            },
+            onAddToCart = { productViewModel.addToCart(it) },
             onBack = { selectedProduct = null }
         )
     } else {
@@ -173,60 +178,50 @@ fun BeautyApp(
         ) { paddingValues ->
             Box(modifier = Modifier.padding(paddingValues)) {
                 when (selectedTab) {
-                    0 -> {
-                        WeatherScreen(
-                            modifier = Modifier.fillMaxSize(),
-                            context = context,
-                            viewModel = weatherViewModel
-                        )
+                    0 -> WeatherScreen(
+                        modifier = Modifier.fillMaxSize(),
+                        context = context,
+                        viewModel = weatherViewModel
+                    )
+                    1 -> ProductsScreen(
+                        products = productViewModel.getDisplayProducts(),
+                        likedProducts = productState.likedProducts,
+                        onToggleLike = { productViewModel.toggleLike(it) },
+                        onAddToCart = { productViewModel.addToCart(it) },
+                        loading = productState.loading,
+                        brands = productState.availableBrands,
+                        productTypes = productState.availableProductTypes,
+                        selectedBrands = productState.selectedBrands,
+                        selectedProductTypes = productState.selectedProductTypes,
+                        onBrandToggle = { productViewModel.toggleBrandFilter(it) },
+                        onProductTypeToggle = { productViewModel.toggleProductTypeFilter(it) },
+                        onClearFilters = { productViewModel.clearFilters() },
+                        hasActiveFilters = productViewModel.hasActiveFilters(),
+                        onProductClick = { product -> selectedProduct = product }
+                    )
+                    2 -> Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "AI Face Scan - Coming soon...")
                     }
-                    1 -> {
-                        ProductsScreen(
-                            products = productViewModel.getDisplayProducts(),
-                            likedProducts = productState.likedProducts,
-                            onToggleLike = { productViewModel.toggleLike(it) },
-                            onAddToCart = { productViewModel.addToCart(it) },
-                            loading = productState.loading,
-                            brands = productState.availableBrands,
-                            productTypes = productState.availableProductTypes,
-                            selectedBrands = productState.selectedBrands,
-                            selectedProductTypes = productState.selectedProductTypes,
-                            onBrandToggle = { productViewModel.toggleBrandFilter(it) },
-                            onProductTypeToggle = { productViewModel.toggleProductTypeFilter(it) },
-                            onClearFilters = { productViewModel.clearFilters() },
-                            hasActiveFilters = productViewModel.hasActiveFilters(),
-                            onProductClick = { product -> selectedProduct = product }
-                        )
-                    }
-                    2 -> {
-                        Box(
-                            modifier = Modifier.fillMaxSize(),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(text = "AI Face Scan - Coming soon...")
-                        }
-                    }
-                    3 -> {
-                        CartScreen(
-                            cartItems = productState.cartItems,
-                            products = productState.products,
-                            onAddToCart = { productViewModel.addToCart(it) },
-                            onRemoveFromCart = { productViewModel.removeFromCart(it) }
-                        )
-                    }
-                    4 -> {
-                        ProfileScreen(
-                            userName = userName,
-                            likedProducts = productState.products.filter {
-                                productState.likedProducts.contains(it.id)
-                            },
-                            likedProductIds = productState.likedProducts,
-                            onToggleLike = { productViewModel.toggleLike(it) },
-                            onAddToCart = { productViewModel.addToCart(it) },
-                            onProductClick = { product -> selectedProduct = product },
-                            onLogout = { showLogoutDialog = true }
-                        )
-                    }
+                    3 -> CartScreen(
+                        cartItems = productState.cartItems,
+                        products = productState.products,
+                        onAddToCart = { productViewModel.addToCart(it) },
+                        onRemoveFromCart = { productViewModel.removeFromCart(it) }
+                    )
+                    4 -> ProfileScreen(
+                        userName = userName,
+                        likedProducts = productState.products.filter {
+                            productState.likedProducts.contains(it.id)
+                        },
+                        likedProductIds = productState.likedProducts,
+                        onToggleLike = { productViewModel.toggleLike(it) },
+                        onAddToCart = { productViewModel.addToCart(it) },
+                        onProductClick = { product -> selectedProduct = product },
+                        onLogout = { showLogoutDialog = true }
+                    )
                 }
             }
         }

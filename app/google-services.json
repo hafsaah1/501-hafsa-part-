@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "657735404993-n23bqf6cnpadftuumcnmgkkrh79p1kmo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.beautyapp",
+            "certificate_hash": "eb2bfb9b3afb14625bfc0daa325cdab01684fa4c"
+          }
+        },
+        {
           "client_id": "657735404993-jbe21it8us5fhframgtb6a49bjvp029c.apps.googleusercontent.com",
           "client_type": 3
         }
