@@ -16,26 +16,26 @@
 13-->/Users/auroraa/Downloads/android-beauty-app 2/app/src/main/AndroidManifest.xml:7:5-79
 13-->/Users/auroraa/Downloads/android-beauty-app 2/app/src/main/AndroidManifest.xml:7:22-76
 14    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-14-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/auroraa/.gradle/caches/transforms-3/68761a8b9f48e11f3d092f75e1ffd849/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
-14-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/auroraa/.gradle/caches/transforms-3/68761a8b9f48e11f3d092f75e1ffd849/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
+14-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/auroraa/.gradle/caches/transforms-3/94e96364f115b1a431e20c21cf09e6f9/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
+14-->[com.google.android.recaptcha:recaptcha:18.5.1] /Users/auroraa/.gradle/caches/transforms-3/94e96364f115b1a431e20c21cf09e6f9/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
 15
 16    <permission
-16-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/5b42b78a4f36c6491e3670ad0943d473/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+16-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/e3bafe022e69c9a5c8d61f2d47396e69/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 17        android:name="com.example.beautyapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-17-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/5b42b78a4f36c6491e3670ad0943d473/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+17-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/e3bafe022e69c9a5c8d61f2d47396e69/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 18        android:protectionLevel="signature" />
-18-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/5b42b78a4f36c6491e3670ad0943d473/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+18-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/e3bafe022e69c9a5c8d61f2d47396e69/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 19
 20    <uses-permission android:name="com.example.beautyapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-20-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/5b42b78a4f36c6491e3670ad0943d473/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-20-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/5b42b78a4f36c6491e3670ad0943d473/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+20-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/e3bafe022e69c9a5c8d61f2d47396e69/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/e3bafe022e69c9a5c8d61f2d47396e69/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 21
 22    <application
 22-->/Users/auroraa/Downloads/android-beauty-app 2/app/src/main/AndroidManifest.xml:9:5-32:19
 23        android:allowBackup="true"
 23-->/Users/auroraa/Downloads/android-beauty-app 2/app/src/main/AndroidManifest.xml:10:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/5b42b78a4f36c6491e3670ad0943d473/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+24-->[androidx.core:core:1.12.0] /Users/auroraa/.gradle/caches/transforms-3/e3bafe022e69c9a5c8d61f2d47396e69/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 25        android:dataExtractionRules="@xml/data_extraction_rules"
 25-->/Users/auroraa/Downloads/android-beauty-app 2/app/src/main/AndroidManifest.xml:11:9-65
 26        android:debuggable="true"
@@ -76,283 +76,294 @@
 45-->/Users/auroraa/Downloads/android-beauty-app 2/app/src/main/AndroidManifest.xml:28:27-74
 46            </intent-filter>
 47        </activity>
-48        <activity
-48-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/3267803ca062e5053f63997f2277918a/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
-49            android:name="androidx.activity.ComponentActivity"
-49-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/3267803ca062e5053f63997f2277918a/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
-50            android:exported="true" />
-50-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/3267803ca062e5053f63997f2277918a/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
-51        <activity
-51-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/4e13f92fe7707f355c01fde6f38eaebb/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
-52            android:name="androidx.compose.ui.tooling.PreviewActivity"
-52-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/4e13f92fe7707f355c01fde6f38eaebb/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
-53            android:exported="true" />
-53-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/4e13f92fe7707f355c01fde6f38eaebb/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
-54
-55        <service
-55-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/856d5413601ebdc1d7077ac319cc1397/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:8:9-14:19
-56            android:name="com.google.firebase.components.ComponentDiscoveryService"
-56-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/856d5413601ebdc1d7077ac319cc1397/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:9:13-84
-57            android:directBootAware="true"
-57-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
-58            android:exported="false" >
-58-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/856d5413601ebdc1d7077ac319cc1397/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:10:13-37
+48
+49        <service
+49-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/684054feee390a2207617659fe47f6e7/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:8:9-14:19
+50            android:name="com.google.firebase.components.ComponentDiscoveryService"
+50-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/684054feee390a2207617659fe47f6e7/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:9:13-84
+51            android:directBootAware="true"
+51-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+52            android:exported="false" >
+52-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/684054feee390a2207617659fe47f6e7/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:10:13-37
+53            <meta-data
+53-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/684054feee390a2207617659fe47f6e7/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:11:13-13:85
+54                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+54-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/684054feee390a2207617659fe47f6e7/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:12:17-119
+55                android:value="com.google.firebase.components.ComponentRegistrar" />
+55-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/684054feee390a2207617659fe47f6e7/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:13:17-82
+56            <meta-data
+56-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
+57                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+57-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+58                android:value="com.google.firebase.components.ComponentRegistrar" />
+58-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
 59            <meta-data
-59-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/856d5413601ebdc1d7077ac319cc1397/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:11:13-13:85
-60                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
-60-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/856d5413601ebdc1d7077ac319cc1397/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:12:17-119
+59-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/5e014bfead5d78197cfde67a797177fa/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+60                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+60-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/5e014bfead5d78197cfde67a797177fa/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
 61                android:value="com.google.firebase.components.ComponentRegistrar" />
-61-->[com.google.firebase:firebase-auth-ktx:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/856d5413601ebdc1d7077ac319cc1397/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:13:17-82
+61-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/5e014bfead5d78197cfde67a797177fa/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
 62            <meta-data
-62-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
-63                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-63-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+62-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+63                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+63-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
 64                android:value="com.google.firebase.components.ComponentRegistrar" />
-64-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
-65            <meta-data
-65-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/1874344d44809e18ce018993f61a2ddd/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
-66                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-66-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/1874344d44809e18ce018993f61a2ddd/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
-67                android:value="com.google.firebase.components.ComponentRegistrar" />
-67-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/1874344d44809e18ce018993f61a2ddd/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
-68            <meta-data
-68-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
-69                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-69-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
-70                android:value="com.google.firebase.components.ComponentRegistrar" />
-70-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
-71        </service>
-72
-73        <activity
-73-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
-74            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-74-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
-75            android:excludeFromRecents="true"
-75-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
-76            android:exported="true"
-76-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
-77            android:launchMode="singleTask"
-77-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
-78            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-78-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
-79            <intent-filter>
-79-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
-80                <action android:name="android.intent.action.VIEW" />
-80-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
-80-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
-81
-82                <category android:name="android.intent.category.DEFAULT" />
-82-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
-82-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
-83                <category android:name="android.intent.category.BROWSABLE" />
-83-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
-83-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
-84
-85                <data
-85-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
-86                    android:host="firebase.auth"
-86-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
-87                    android:path="/"
-87-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
-88                    android:scheme="genericidp" />
-88-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
-89            </intent-filter>
-90        </activity>
-91        <activity
-91-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
-92            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-92-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
-93            android:excludeFromRecents="true"
-93-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
-94            android:exported="true"
-94-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
-95            android:launchMode="singleTask"
-95-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
-96            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-96-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
-97            <intent-filter>
-97-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
-98                <action android:name="android.intent.action.VIEW" />
-98-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
-98-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
-99
-100                <category android:name="android.intent.category.DEFAULT" />
-100-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
-100-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
-101                <category android:name="android.intent.category.BROWSABLE" />
-101-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
-101-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
-102
-103                <data
-103-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
-104                    android:host="firebase.auth"
-104-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
-105                    android:path="/"
-105-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
-106                    android:scheme="recaptcha" />
-106-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/ba72cb824d2d4a0641ad91afaf62c8b1/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
-107            </intent-filter>
-108        </activity>
-109
-110        <service
-110-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
-111            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-111-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
-112            android:enabled="true"
-112-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
-113            android:exported="false" >
-113-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
-114            <meta-data
-114-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
-115                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-115-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
-116                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-116-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
-117        </service>
-118
-119        <activity
-119-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
-120            android:name="androidx.credentials.playservices.HiddenActivity"
-120-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
-121            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-121-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
-122            android:enabled="true"
-122-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
-123            android:exported="false"
-123-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
-124            android:fitsSystemWindows="true"
-124-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
-125            android:theme="@style/Theme.Hidden" >
-125-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/0fe9f4821d658f7aa9c888de4e5cb8f2/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
-126        </activity>
-127        <activity
-127-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-128            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-128-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-129            android:excludeFromRecents="true"
-129-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-130            android:exported="false"
-130-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-131            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-131-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-132        <!--
-133            Service handling Google Sign-In user revocation. For apps that do not integrate with
-134            Google Sign-In, this service will never be started.
-135        -->
-136        <service
-136-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-137            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-137-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-138            android:exported="true"
-138-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-139            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-139-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-140            android:visibleToInstantApps="true" />
-140-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/967d9420dd716bc87dab1e53a5d7e273/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-141
-142        <activity
-142-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/cac1ae7d9d6122f6a72cf5a8f33c3cfc/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-143            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-143-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/cac1ae7d9d6122f6a72cf5a8f33c3cfc/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-144            android:exported="false"
-144-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/cac1ae7d9d6122f6a72cf5a8f33c3cfc/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-145            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-145-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/cac1ae7d9d6122f6a72cf5a8f33c3cfc/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-146
-147        <provider
-147-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
-148            android:name="com.google.firebase.provider.FirebaseInitProvider"
-148-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
-149            android:authorities="com.example.beautyapp.firebaseinitprovider"
-149-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
-150            android:directBootAware="true"
-150-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
-151            android:exported="false"
-151-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
-152            android:initOrder="100" />
-152-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/0713324624f81eeca1955916c2d4818f/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
-153        <provider
-153-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-154            android:name="androidx.startup.InitializationProvider"
-154-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-155            android:authorities="com.example.beautyapp.androidx-startup"
-155-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-156            android:exported="false" >
-156-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-157            <meta-data
-157-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-158                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-158-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-159                android:value="androidx.startup" />
-159-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/543c9a98c5a9689654734b8724d03a4a/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-160            <meta-data
-160-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/auroraa/.gradle/caches/transforms-3/16486110f8ef37a0fc01fb7ca671896f/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-161                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-161-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/auroraa/.gradle/caches/transforms-3/16486110f8ef37a0fc01fb7ca671896f/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-162                android:value="androidx.startup" />
-162-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/auroraa/.gradle/caches/transforms-3/16486110f8ef37a0fc01fb7ca671896f/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-163            <meta-data
-163-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-164                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-164-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-165                android:value="androidx.startup" />
-165-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-166        </provider>
-167
-168        <meta-data
-168-->[com.google.android.gms:play-services-basement:18.4.0] /Users/auroraa/.gradle/caches/transforms-3/1b724306c5ea7045e46589404cfa912a/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
-169            android:name="com.google.android.gms.version"
-169-->[com.google.android.gms:play-services-basement:18.4.0] /Users/auroraa/.gradle/caches/transforms-3/1b724306c5ea7045e46589404cfa912a/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
-170            android:value="@integer/google_play_services_version" />
-170-->[com.google.android.gms:play-services-basement:18.4.0] /Users/auroraa/.gradle/caches/transforms-3/1b724306c5ea7045e46589404cfa912a/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
-171
-172        <receiver
-172-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-173            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-173-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-174            android:directBootAware="false"
-174-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-175            android:enabled="true"
-175-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-176            android:exported="true"
-176-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-177            android:permission="android.permission.DUMP" >
-177-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-178            <intent-filter>
-178-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-179                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-179-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-179-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-180            </intent-filter>
-181            <intent-filter>
-181-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-182                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-182-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-182-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-183            </intent-filter>
-184            <intent-filter>
-184-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-185                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-185-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-185-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-186            </intent-filter>
-187            <intent-filter>
-187-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-188                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-188-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-188-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/de972476c557b0398fe08d08cbd01506/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-189            </intent-filter>
-190        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
-191        <activity
-191-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/34a22bb9e8cac9c87f5303b5f6c25dd2/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
-192            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-192-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/34a22bb9e8cac9c87f5303b5f6c25dd2/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
-193            android:exported="false"
-193-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/34a22bb9e8cac9c87f5303b5f6c25dd2/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
-194            android:stateNotNeeded="true"
-194-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/34a22bb9e8cac9c87f5303b5f6c25dd2/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
-195            android:theme="@style/Theme.PlayCore.Transparent" />
-195-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/34a22bb9e8cac9c87f5303b5f6c25dd2/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
-196    </application>
-197
-198</manifest>
+64-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+65        </service>
+66
+67        <activity
+67-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
+68            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+68-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
+69            android:excludeFromRecents="true"
+69-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
+70            android:exported="true"
+70-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
+71            android:launchMode="singleTask"
+71-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
+72            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+72-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
+73            <intent-filter>
+73-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
+74                <action android:name="android.intent.action.VIEW" />
+74-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+74-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+75
+76                <category android:name="android.intent.category.DEFAULT" />
+76-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+76-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+77                <category android:name="android.intent.category.BROWSABLE" />
+77-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+77-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+78
+79                <data
+79-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+80                    android:host="firebase.auth"
+80-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+81                    android:path="/"
+81-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+82                    android:scheme="genericidp" />
+82-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+83            </intent-filter>
+84        </activity>
+85        <activity
+85-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
+86            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+86-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
+87            android:excludeFromRecents="true"
+87-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
+88            android:exported="true"
+88-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
+89            android:launchMode="singleTask"
+89-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
+90            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+90-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
+91            <intent-filter>
+91-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
+92                <action android:name="android.intent.action.VIEW" />
+92-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+92-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+93
+94                <category android:name="android.intent.category.DEFAULT" />
+94-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+94-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+95                <category android:name="android.intent.category.BROWSABLE" />
+95-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+95-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+96
+97                <data
+97-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+98                    android:host="firebase.auth"
+98-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+99                    android:path="/"
+99-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+100                    android:scheme="recaptcha" />
+100-->[com.google.firebase:firebase-auth:23.1.0] /Users/auroraa/.gradle/caches/transforms-3/fccec2acae2e9ff85f2b28ae2cdb2459/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+101            </intent-filter>
+102        </activity>
+103
+104        <service
+104-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+105            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+105-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+106            android:enabled="true"
+106-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+107            android:exported="false" >
+107-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+108            <meta-data
+108-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+109                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+109-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+110                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+110-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+111        </service>
+112
+113        <activity
+113-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+114            android:name="androidx.credentials.playservices.HiddenActivity"
+114-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+115            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+115-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
+116            android:enabled="true"
+116-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+117            android:exported="false"
+117-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+118            android:fitsSystemWindows="true"
+118-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+119            android:theme="@style/Theme.Hidden" >
+119-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /Users/auroraa/.gradle/caches/transforms-3/62c9c867b848530596130f98912db742/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+120        </activity>
+121        <activity
+121-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+122            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+122-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+123            android:excludeFromRecents="true"
+123-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+124            android:exported="false"
+124-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+125-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+126        <!--
+127            Service handling Google Sign-In user revocation. For apps that do not integrate with
+128            Google Sign-In, this service will never be started.
+129        -->
+130        <service
+130-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+131            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+131-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+132            android:exported="true"
+132-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+133            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+133-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+134            android:visibleToInstantApps="true" />
+134-->[com.google.android.gms:play-services-auth:20.7.0] /Users/auroraa/.gradle/caches/transforms-3/a0836a38156826d4bd8288c776a98491/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+135
+136        <activity
+136-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/3a86b9f8e1d51ab3d5e024eff4dcf420/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+137            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+137-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/3a86b9f8e1d51ab3d5e024eff4dcf420/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+138            android:exported="false"
+138-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/3a86b9f8e1d51ab3d5e024eff4dcf420/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+139-->[com.google.android.gms:play-services-base:18.0.1] /Users/auroraa/.gradle/caches/transforms-3/3a86b9f8e1d51ab3d5e024eff4dcf420/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+140
+141        <provider
+141-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+142            android:name="com.google.firebase.provider.FirebaseInitProvider"
+142-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+143            android:authorities="com.example.beautyapp.firebaseinitprovider"
+143-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+144            android:directBootAware="true"
+144-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+145            android:exported="false"
+145-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+146            android:initOrder="100" />
+146-->[com.google.firebase:firebase-common:21.0.0] /Users/auroraa/.gradle/caches/transforms-3/63777c9c88d9eb06f81ed4cb43f752da/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+147
+148        <activity
+148-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/9e1ddd626af97200ba728fc3e8c010ca/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+149            android:name="androidx.compose.ui.tooling.PreviewActivity"
+149-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/9e1ddd626af97200ba728fc3e8c010ca/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+150            android:exported="true" />
+150-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/9e1ddd626af97200ba728fc3e8c010ca/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+151        <activity
+151-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/5caf20f4c2a66ace20fd617eb34d5ff8/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
+152            android:name="androidx.activity.ComponentActivity"
+152-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/5caf20f4c2a66ace20fd617eb34d5ff8/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
+153            android:exported="true" />
+153-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/auroraa/.gradle/caches/transforms-3/5caf20f4c2a66ace20fd617eb34d5ff8/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
+154
+155        <provider
+155-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+156            android:name="androidx.startup.InitializationProvider"
+156-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+157            android:authorities="com.example.beautyapp.androidx-startup"
+157-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+158            android:exported="false" >
+158-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+159            <meta-data
+159-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+160                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+160-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+161                android:value="androidx.startup" />
+161-->[androidx.emoji2:emoji2:1.3.0] /Users/auroraa/.gradle/caches/transforms-3/221eb0632340b55f89c513111a4fbd45/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+162            <meta-data
+162-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/auroraa/.gradle/caches/transforms-3/1ea096310b93e5c6fe82af14f0ef12ac/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+163                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+163-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/auroraa/.gradle/caches/transforms-3/1ea096310b93e5c6fe82af14f0ef12ac/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+164                android:value="androidx.startup" />
+164-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/auroraa/.gradle/caches/transforms-3/1ea096310b93e5c6fe82af14f0ef12ac/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+165            <meta-data
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+166                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+167                android:value="androidx.startup" />
+167-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+168        </provider>
+169
+170        <service
+170-->[androidx.room:room-runtime:2.6.1] /Users/auroraa/.gradle/caches/transforms-3/5880155eed1e99a016fbd7f70aa60211/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+171            android:name="androidx.room.MultiInstanceInvalidationService"
+171-->[androidx.room:room-runtime:2.6.1] /Users/auroraa/.gradle/caches/transforms-3/5880155eed1e99a016fbd7f70aa60211/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+172            android:directBootAware="true"
+172-->[androidx.room:room-runtime:2.6.1] /Users/auroraa/.gradle/caches/transforms-3/5880155eed1e99a016fbd7f70aa60211/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+173            android:exported="false" />
+173-->[androidx.room:room-runtime:2.6.1] /Users/auroraa/.gradle/caches/transforms-3/5880155eed1e99a016fbd7f70aa60211/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+174
+175        <meta-data
+175-->[com.google.android.gms:play-services-basement:18.4.0] /Users/auroraa/.gradle/caches/transforms-3/a5618228374f266aa135b11fcd92f7a0/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+176            android:name="com.google.android.gms.version"
+176-->[com.google.android.gms:play-services-basement:18.4.0] /Users/auroraa/.gradle/caches/transforms-3/a5618228374f266aa135b11fcd92f7a0/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+177            android:value="@integer/google_play_services_version" />
+177-->[com.google.android.gms:play-services-basement:18.4.0] /Users/auroraa/.gradle/caches/transforms-3/a5618228374f266aa135b11fcd92f7a0/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+178
+179        <receiver
+179-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+180            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+180-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+181            android:directBootAware="false"
+181-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+182            android:enabled="true"
+182-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+183            android:exported="true"
+183-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+184            android:permission="android.permission.DUMP" >
+184-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+185            <intent-filter>
+185-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+186                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+186-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+186-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+187            </intent-filter>
+188            <intent-filter>
+188-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+189                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+189-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+189-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+190            </intent-filter>
+191            <intent-filter>
+191-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+192                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+192-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+192-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+193            </intent-filter>
+194            <intent-filter>
+194-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+195                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+195-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+195-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/auroraa/.gradle/caches/transforms-3/a22e14f2d995baf8eccc362e988d4c37/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+196            </intent-filter>
+197        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+198        <activity
+198-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/5c5ea6b45f907071da5d5e7232b9edde/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+199            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+199-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/5c5ea6b45f907071da5d5e7232b9edde/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
+200            android:exported="false"
+200-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/5c5ea6b45f907071da5d5e7232b9edde/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+201            android:stateNotNeeded="true"
+201-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/5c5ea6b45f907071da5d5e7232b9edde/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+202            android:theme="@style/Theme.PlayCore.Transparent" />
+202-->[com.google.android.play:core-common:2.0.3] /Users/auroraa/.gradle/caches/transforms-3/5c5ea6b45f907071da5d5e7232b9edde/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+203    </application>
+204
+205</manifest>

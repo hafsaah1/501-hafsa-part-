@@ -1,18 +1,23 @@
 package com.example.beautyapp.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application // <-- 1. IMPORT Application
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel // <-- 2. CHANGE from ViewModel to AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.beautyapp.data.AppDatabase // <-- 3. IMPORT Database
+import com.example.beautyapp.data.LikedProduct // <-- 4. IMPORT LikedProduct Entity
 import com.example.beautyapp.data.Product
-import com.example.beautyapp.network.MakeupApi
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import com.example.beautyapp.network.MakeupApiService // <-- Make sure this is your correct service
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
+// This data class is the same
 data class AppState(
     val products: List<Product> = emptyList(),
     val filteredProducts: List<Product> = emptyList(),
-    val likedProducts: Set<Int> = emptySet(),
+    val likedProducts: Set<Int> = emptySet(), // This will now come from the DB
     val cartItems: Map<Int, Int> = emptyMap(),
     val loading: Boolean = false,
     val activeTab: String = "home",
@@ -22,19 +27,42 @@ data class AppState(
     val availableProductTypes: List<String> = emptyList()
 )
 
-class MainViewModel : ViewModel() {
+// <-- 5. CHANGE signature to (application: Application) and extend AndroidViewModel(application)
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+
+    // <-- 6. GET the DAO from the database
+    private val likedProductDao = AppDatabase.getDatabase(application).likedProductDao()
+
     private val _state = MutableStateFlow(AppState())
     val state: StateFlow<AppState> = _state.asStateFlow()
 
+    // Assuming you have your MakeupApiService defined somewhere else
+    // If not, use the code you had before to create the 'api' service
+    private val api: MakeupApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://makeup-api.herokuapp.com/") // <-- FIXED
+            .addConverterFactory(GsonConverterFactory.create()) //added//           .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(MakeupApiService::class.java)
+    }
+
     init {
         fetchProducts()
+
+        // <-- 7. NEW: Launch a coroutine to listen to the database
+        // This Flow automatically updates the state whenever the database changes
+        viewModelScope.launch {
+            likedProductDao.getAllLikedProductIds().collect { likedIds ->
+                _state.update { it.copy(likedProducts = likedIds.toSet()) }
+            }
+        }
     }
 
     fun fetchProducts() {
         viewModelScope.launch {
             _state.value = _state.value.copy(loading = true)
             try {
-                val products = MakeupApi.service.getProducts()
+                val products = api.getProducts() // Use your Retrofit instance
 
                 // Extract unique brands and product types
                 val brands = products.mapNotNull { it.brand }.distinct().sorted()
@@ -49,7 +77,7 @@ class MainViewModel : ViewModel() {
                 )
             } catch (e: Exception) {
                 _state.value = _state.value.copy(loading = false)
-                e.printStackTrace()
+                Log.e("MainViewModel", "Failed to fetch products", e)
             }
         }
     }
@@ -95,15 +123,23 @@ class MainViewModel : ViewModel() {
         _state.value = _state.value.copy(filteredProducts = filtered)
     }
 
+    // <-- 8. UPDATED: This function now writes to the database
     fun toggleLike(productId: Int) {
-        val currentLiked = _state.value.likedProducts.toMutableSet()
-        if (currentLiked.contains(productId)) {
-            currentLiked.remove(productId)
-        } else {
-            currentLiked.add(productId)
+        viewModelScope.launch {
+            val currentLikes = _state.value.likedProducts
+            if (currentLikes.contains(productId)) {
+                // Unlike: Delete from database
+                likedProductDao.unlikeProduct(LikedProduct(id = productId))
+            } else {
+                // Like: Insert into database
+                likedProductDao.likeProduct(LikedProduct(id = productId))
+            }
+            // The Flow in init{} will automatically update the state,
+            // so no need to update _state here.
         }
-        _state.value = _state.value.copy(likedProducts = currentLiked)
     }
+
+    // --- (The rest of your functions stay the same) ---
 
     fun addToCart(productId: Int) {
         val currentCart = _state.value.cartItems.toMutableMap()

@@ -7,7 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,7 +36,7 @@ fun FilterBottomSheet(
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            // Header
+            // Header (Stays the same)
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -55,87 +55,109 @@ fun FilterBottomSheet(
                 }
             }
 
+            //  ************************************************
+            //  START OF NEW TAB CODE
+            //  ************************************************
+
+            // 1. Add state to remember which tab is selected
+            var selectedTabIndex by remember { mutableStateOf(0) }
+            val tabs = listOf("Brand", "Product Type")
+
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Scrollable content
-            LazyColumn(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxWidth()
+            // 2. Add the TabRow
+            TabRow(
+                selectedTabIndex = selectedTabIndex,
+                containerColor = Color.White,
+                contentColor = Color(0xFFF472B6) // Your app's pink color
             ) {
-                // Brands Section
-                item {
-                    Text(
-                        text = "BRAND",
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Gray,
-                        modifier = Modifier.padding(vertical = 8.dp)
+                tabs.forEachIndexed { index, title ->
+                    Tab(
+                        selected = selectedTabIndex == index,
+                        onClick = { selectedTabIndex = index },
+                        text = { Text(text = title) }
                     )
-                }
-
-                items(brands) { brand ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 4.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Checkbox(
-                            checked = selectedBrands.contains(brand),
-                            onCheckedChange = { onBrandToggle(brand) },
-                            colors = CheckboxDefaults.colors(
-                                checkedColor = Color(0xFFF472B6)
-                            )
-                        )
-                        Text(
-                            text = brand,
-                            fontSize = 16.sp,
-                            modifier = Modifier.padding(start = 8.dp)
-                        )
-                    }
-                }
-
-                // Product Types Section
-                item {
-                    Spacer(modifier = Modifier.height(24.dp))
-                    Text(
-                        text = "PRODUCT TYPE",
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Gray,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
-
-                items(productTypes) { type ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 4.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Checkbox(
-                            checked = selectedProductTypes.contains(type),
-                            onCheckedChange = { onProductTypeToggle(type) },
-                            colors = CheckboxDefaults.colors(
-                                checkedColor = Color(0xFFF472B6)
-                            )
-                        )
-                        Text(
-                            text = type.replaceFirstChar { it.uppercase() },
-                            fontSize = 16.sp,
-                            modifier = Modifier.padding(start = 8.dp)
-                        )
-                    }
-                }
-
-                item {
-                    Spacer(modifier = Modifier.height(100.dp))
                 }
             }
 
-            // Action Buttons
+            // 3. This Box will hold the correct LazyColumn
+            Box(
+                modifier = Modifier
+                    .weight(1f) // This makes it fill the available space
+                    .fillMaxWidth()
+            ) {
+                // 4. Use `when` to show the correct list
+                when (selectedTabIndex) {
+
+                    // --- TAB 0: BRANDS ---
+                    0 -> LazyColumn(
+                        modifier = Modifier.fillMaxSize(),
+                        contentPadding = PaddingValues(top = 8.dp) // Add padding
+                    ) {
+                        items(brands) { brand ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 4.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Checkbox(
+                                    checked = selectedBrands.contains(brand),
+                                    onCheckedChange = { onBrandToggle(brand) },
+                                    colors = CheckboxDefaults.colors(
+                                        checkedColor = Color(0xFFF472B6)
+                                    )
+                                )
+                                Text(
+                                    text = brand,
+                                    fontSize = 16.sp,
+                                    modifier = Modifier.padding(start = 8.dp)
+                                )
+                            }
+                        }
+                        item {
+                            Spacer(modifier = Modifier.height(100.dp))
+                        }
+                    }
+
+                    // --- TAB 1: PRODUCT TYPES ---
+                    1 -> LazyColumn(
+                        modifier = Modifier.fillMaxSize(),
+                        contentPadding = PaddingValues(top = 8.dp) // Add padding
+                    ) {
+                        items(productTypes) { type ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 4.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Checkbox(
+                                    checked = selectedProductTypes.contains(type),
+                                    onCheckedChange = { onProductTypeToggle(type) },
+                                    colors = CheckboxDefaults.colors(
+                                        checkedColor = Color(0xFFF472B6)
+                                    )
+                                )
+                                Text(
+                                    text = type.replaceFirstChar { it.uppercase() },
+                                    fontSize = 16.sp,
+                                    modifier = Modifier.padding(start = 8.dp)
+                                )
+                            }
+                        }
+                        item {
+                            Spacer(modifier = Modifier.height(100.dp))
+                        }
+                    }
+                }
+            }
+            //  ************************************************
+            //  END OF NEW TAB CODE
+            //  ************************************************
+
+
+            // Action Buttons (Stays the same)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
