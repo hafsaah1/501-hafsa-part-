@@ -1,5 +1,9 @@
 package com.example.beautyapp.ui.screens
 
+
+import com.example.beautyapp.utils.parseHexColor
+
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,19 +18,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.example.beautyapp.data.CartItem
 import com.example.beautyapp.data.Product
+import com.example.beautyapp.data.ProductColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CartScreen(
-    cartItems: Map<Int, Int>,
+    cartItems: List<CartItem>,  // UPDATED - List<CartItem> not Map!
     products: List<Product>,
-    onAddToCart: (Int) -> Unit,
-    onRemoveFromCart: (Int) -> Unit
+    onAddToCart: (Int, ProductColor?) -> Unit,  // UPDATED - added ProductColor parameter!
+    onRemoveFromCart: (Int, ProductColor?) -> Unit  // UPDATED - added ProductColor parameter!
 ) {
     Scaffold(
         topBar = {
@@ -35,6 +43,8 @@ fun CartScreen(
                     Text(
                         text = "Cart",
                         textAlign = TextAlign.Center,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface,
                         modifier = Modifier.fillMaxWidth()
                     )
                 },
@@ -42,7 +52,8 @@ fun CartScreen(
                     IconButton(onClick = { /* Handle back */ }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back"
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 },
@@ -58,7 +69,7 @@ fun CartScreen(
                     Spacer(modifier = Modifier.width(8.dp))
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.surface
                 )
             )
         }
@@ -73,7 +84,7 @@ fun CartScreen(
                 Text(
                     text = "Your cart is empty",
                     style = MaterialTheme.typography.bodyLarge,
-                    color = Color.Gray
+                    color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
                 )
             }
         } else {
@@ -87,46 +98,51 @@ fun CartScreen(
                     contentPadding = PaddingValues(16.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
-                    items(cartItems.toList()) { (productId, quantity) ->
-                        val product = products.find { it.id == productId }
+                    items(cartItems) { cartItem ->  // UPDATED - now iterating over CartItems
+                        val product = products.find { it.id == cartItem.productId }
                         product?.let {
                             CartItemCard(
                                 product = it,
-                                quantity = quantity,
-                                onAddToCart = { onAddToCart(productId) },
-                                onRemoveFromCart = { onRemoveFromCart(productId) }
+                                cartItem = cartItem,  // UPDATED - pass entire CartItem
+                                onAddToCart = { onAddToCart(cartItem.productId, cartItem.selectedShade) },
+                                onRemoveFromCart = { onRemoveFromCart(cartItem.productId, cartItem.selectedShade) }
                             )
                         }
                     }
                 }
-                
+
                 // Total and Checkout
                 Surface(
                     modifier = Modifier.fillMaxWidth(),
-                    color = Color.White,
+                    color = MaterialTheme.colorScheme.surface,
                     shadowElevation = 8.dp
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp)
                     ) {
-                        Divider(modifier = Modifier.padding(bottom = 16.dp))
-                        
+                        Divider(
+                            modifier = Modifier.padding(bottom = 16.dp),
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f)
+                        )
+
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text(
                                 text = "Total",
-                                style = MaterialTheme.typography.titleMedium
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onSurface
                             )
                             Text(
                                 text = "$${calculateTotal(cartItems, products)}",
-                                style = MaterialTheme.typography.titleMedium
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onSurface
                             )
                         }
-                        
+
                         Spacer(modifier = Modifier.height(16.dp))
-                        
+
                         Button(
                             onClick = { /* Handle checkout */ },
                             colors = ButtonDefaults.buttonColors(
@@ -149,14 +165,16 @@ fun CartScreen(
 @Composable
 fun CartItemCard(
     product: Product,
-    quantity: Int,
+    cartItem: CartItem,  // UPDATED - receive CartItem instead of just quantity
     onAddToCart: () -> Unit,
     onRemoveFromCart: () -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
@@ -174,7 +192,7 @@ fun CartItemCard(
                     .size(80.dp)
                     .clip(RoundedCornerShape(8.dp))
             )
-            
+
             // Product Details
             Column(
                 modifier = Modifier.weight(1f)
@@ -182,32 +200,59 @@ fun CartItemCard(
                 Text(
                     text = product.name ?: "",
                     style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
-                
+
                 product.brand?.let {
                     Text(
                         text = it,
                         style = MaterialTheme.typography.bodySmall,
-                        color = Color.Gray,
-                        modifier = Modifier.padding(vertical = 4.dp)
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                        modifier = Modifier.padding(vertical = 2.dp)
                     )
                 }
-                
+
+                // SHOW SELECTED SHADE! 🎨
+                cartItem.selectedShade?.let { shade ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        modifier = Modifier.padding(vertical = 4.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(16.dp)
+                                .background(
+                                    color = parseHexColor(shade.hexValue),
+                                    shape = CircleShape
+                                )
+                        )
+                        Text(
+                            text = "Shade: ${shade.colourName ?: "Custom"}",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Color(0xFFF472B6),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
+                }
+
                 product.price?.let {
                     Text(
                         text = "$$it",
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color(0xFF10B981),
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.padding(top = 4.dp)
                     )
                 }
-                
+
                 // Quantity Controls
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(top = 8.dp)
                 ) {
                     IconButton(
                         onClick = onRemoveFromCart,
@@ -215,14 +260,19 @@ fun CartItemCard(
                             .size(28.dp)
                             .clip(CircleShape)
                     ) {
-                        Text(text = "−", fontSize = MaterialTheme.typography.titleMedium.fontSize)
+                        Text(
+                            text = "−",
+                            fontSize = MaterialTheme.typography.titleMedium.fontSize,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
                     }
-                    
+
                     Text(
-                        text = quantity.toString(),
-                        style = MaterialTheme.typography.bodyMedium
+                        text = cartItem.quantity.toString(),  // UPDATED - use cartItem.quantity
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
-                    
+
                     IconButton(
                         onClick = onAddToCart,
                         modifier = Modifier
@@ -232,7 +282,7 @@ fun CartItemCard(
                         Text(
                             text = "+",
                             fontSize = MaterialTheme.typography.titleMedium.fontSize,
-                            color = Color.White
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }
@@ -241,11 +291,14 @@ fun CartItemCard(
     }
 }
 
-fun calculateTotal(cartItems: Map<Int, Int>, products: List<Product>): String {
-    val total = cartItems.entries.sumOf { (productId, quantity) ->
-        val product = products.find { it.id == productId }
+// Helper function from ProductDetailScreen
+//
+
+fun calculateTotal(cartItems: List<CartItem>, products: List<Product>): String {  // UPDATED - List<CartItem>
+    val total = cartItems.sumOf { cartItem ->
+        val product = products.find { it.id == cartItem.productId }
         val price = product?.price?.toDoubleOrNull() ?: 0.0
-        price * quantity
+        price * cartItem.quantity
     }
     return String.format("%.2f", total)
 }

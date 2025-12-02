@@ -1,3 +1,25 @@
+/*
+ * MainViewModel.kt
+ * PURPOSE: Central state management for BeautyApp - handles products, cart, favorites, notes, and filters
+ * MAIN COMPONENTS: MainViewModel, AppState data class
+ * KEY FEATURES:
+ *   - Product fetching from Makeup API with 30s timeout
+ *   - Cart management with shade selection support (CartItem with ProductColor)
+ *   - Favorites/likes management via Room database
+ *   - Notes management with image storage
+ *   - Brand and product type filtering
+ * DATA FLOW:
+ *   - StateFlow<AppState> exposes reactive state to UI
+ *   - Room DAOs for persistent storage (likes, notes)
+ *   - Retrofit API for product data
+ * STATE STRUCTURE:
+ *   - products: All products from API
+ *   - filteredProducts: Products after applying filters
+ *   - cartItems: List<CartItem> (productId + quantity + selectedShade)
+ *   - likedProducts: Set<Int> of product IDs
+ *   - selectedBrands/selectedProductTypes: Active filters
+ */
+
 package com.example.beautyapp.viewmodel
 
 import android.app.Application
@@ -5,24 +27,26 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.beautyapp.data.AppDatabase
+import com.example.beautyapp.data.CartItem
 import com.example.beautyapp.data.LikedProduct
 import com.example.beautyapp.data.Note
 import com.example.beautyapp.data.Product
+import com.example.beautyapp.data.ProductColor
 import com.example.beautyapp.network.MakeupApiService
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import okhttp3.OkHttpClient  //new - import for timeout configuration
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.*
-import java.util.concurrent.TimeUnit  //new - import for timeout units
+import java.util.concurrent.TimeUnit
 
 data class AppState(
     val products: List<Product> = emptyList(),
     val filteredProducts: List<Product> = emptyList(),
     val likedProducts: Set<Int> = emptySet(),
-    val cartItems: Map<Int, Int> = emptyMap(),
+    val cartItems: List<CartItem> = emptyList(),  // UPDATED - now List<CartItem> instead of Map!
     val loading: Boolean = false,
     val activeTab: String = "home",
     val selectedBrands: Set<String> = emptySet(),
@@ -41,17 +65,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val notes = noteDao.getAllNotes()
 
-    //new - Updated with timeout configuration
+    // Updated with timeout configuration
     private val api: MakeupApiService by lazy {
         val okHttpClient = OkHttpClient.Builder()
-            .connectTimeout(30, TimeUnit.SECONDS)  //new - 30 second connection timeout
-            .readTimeout(30, TimeUnit.SECONDS)     //new - 30 second read timeout
-            .writeTimeout(30, TimeUnit.SECONDS)    //new - 30 second write timeout
+            .connectTimeout(30, TimeUnit.SECONDS)  // 30 second connection timeout
+            .readTimeout(30, TimeUnit.SECONDS)     // 30 second read timeout
+            .writeTimeout(30, TimeUnit.SECONDS)    // 30 second write timeout
             .build()
 
         Retrofit.Builder()
             .baseUrl("https://makeup-api.herokuapp.com/")
-            .client(okHttpClient)  //new - attach the custom OkHttp client
+            .client(okHttpClient)  // Attach the custom OkHttp client
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MakeupApiService::class.java)
@@ -167,30 +191,57 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun addToCart(productId: Int) {
-        val currentCart = _state.value.cartItems.toMutableMap()
-        val currentQty = currentCart[productId] ?: 0
-        currentCart[productId] = currentQty + 1
-        _state.value = _state.value.copy(cartItems = currentCart)
+    // UPDATED - Add to cart with shade support
+    fun addToCart(productId: Int, selectedShade: ProductColor? = null) {
+        val currentItems = _state.value.cartItems.toMutableList()
+
+        // Find if this exact product + shade combo already exists
+        val existingIndex = currentItems.indexOfFirst {
+            it.productId == productId && it.selectedShade == selectedShade
+        }
+
+        if (existingIndex >= 0) {
+            // Same product + same shade = increase quantity
+            currentItems[existingIndex] = currentItems[existingIndex].copy(
+                quantity = currentItems[existingIndex].quantity + 1
+            )
+        } else {
+            // New product or different shade = add new item
+            currentItems.add(CartItem(productId, 1, selectedShade))
+        }
+
+        _state.value = _state.value.copy(cartItems = currentItems)
     }
 
-    fun removeFromCart(productId: Int) {
-        val currentCart = _state.value.cartItems.toMutableMap()
-        val currentQty = currentCart[productId] ?: 0
-        if (currentQty <= 1) {
-            currentCart.remove(productId)
-        } else {
-            currentCart[productId] = currentQty - 1
+    // UPDATED - Remove from cart with shade support
+    fun removeFromCart(productId: Int, selectedShade: ProductColor? = null) {
+        val currentItems = _state.value.cartItems.toMutableList()
+
+        // Find the exact product + shade combo
+        val existingIndex = currentItems.indexOfFirst {
+            it.productId == productId && it.selectedShade == selectedShade
         }
-        _state.value = _state.value.copy(cartItems = currentCart)
+
+        if (existingIndex >= 0) {
+            val item = currentItems[existingIndex]
+            if (item.quantity > 1) {
+                // Decrease quantity
+                currentItems[existingIndex] = item.copy(quantity = item.quantity - 1)
+            } else {
+                // Remove item completely
+                currentItems.removeAt(existingIndex)
+            }
+            _state.value = _state.value.copy(cartItems = currentItems)
+        }
     }
 
     fun setActiveTab(tab: String) {
         _state.value = _state.value.copy(activeTab = tab)
     }
 
+    // UPDATED - Calculate total items in cart
     fun getCartCount(): Int {
-        return _state.value.cartItems.values.sum()
+        return _state.value.cartItems.sumOf { it.quantity }
     }
 
     fun getFeaturedProducts(): List<Product> {

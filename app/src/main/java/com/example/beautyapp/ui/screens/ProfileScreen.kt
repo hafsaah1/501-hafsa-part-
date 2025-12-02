@@ -1,5 +1,44 @@
 package com.example.beautyapp.ui.screens
 
+/*
+ * ProfileScreen.kt
+ *
+ * PURPOSE:
+ * Displays the user's profile page with personalized content including favorites and notes.
+ * Provides access to accessibility settings (dark mode, font size, color blind mode, animations).
+ *
+ * MAIN COMPONENTS:
+ * 1. ProfileScreen - Main composable with user info, tabs, and settings button
+ * 2. FavoritesSection - Grid view of user's liked products
+ * 3. NotesSection - List view of user's personal notes with images
+ * 4. NoteCard - Individual note display with delete functionality
+ * 5. AddNoteDialog - Dialog for creating new notes with optional images
+ * 6. ProfileStat - Displays count statistics (favorites, notes)
+ *
+ * KEY FEATURES:
+ * - Tab navigation between Favorites and Notes
+ * - Settings dialog integration for accessibility preferences
+ * - Notes with image attachments stored in app sandbox
+ * - Room database integration for persistent notes storage
+ * - Full dark mode support using MaterialTheme colors
+ * - Logout functionality with confirmation dialog
+ *
+ * DATA FLOW:
+ * - Uses MainViewModel for product/notes data (Room database)
+ * - Uses SettingsViewModel for accessibility preferences (DataStore)
+ * - Collects StateFlows to observe data changes reactively
+ *
+ * THEMING:
+ * - All colors use MaterialTheme.colorScheme for automatic dark/light mode adaptation
+ * - Brand color (0xFFF472B6pink) stays consistent across themes
+ * - Surface, background, and text colors adapt to current theme setting
+ *
+ * FILE OPERATIONS:
+ * - Images saved to: /data/data/com.example.beautyapp/files/
+ * - Image compression: JPEG 85% quality
+ * - Automatic cleanup when notes are deleted
+ */
+
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -31,17 +70,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.beautyapp.data.Product
-import com.example.beautyapp.data.Note  //new - import Note from data package instead of defining it here
+import com.example.beautyapp.data.Note
 import com.example.beautyapp.ui.components.ProductCard
-import com.example.beautyapp.viewmodel.MainViewModel  //new - import MainViewModel
+import com.example.beautyapp.ui.components.SettingsDialog
+import com.example.beautyapp.viewmodel.MainViewModel
+import com.example.beautyapp.viewmodel.SettingsViewModel
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
-//new - REMOVED the local Note data class - now using the one from data package
+// [Rest of the code stays exactly the same - I'll include it all below]
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     userName: String,
@@ -51,136 +94,184 @@ fun ProfileScreen(
     onAddToCart: (Int) -> Unit,
     onProductClick: (Product) -> Unit,
     onLogout: () -> Unit,
-    viewModel: MainViewModel  //new - ADD THIS PARAMETER
+    viewModel: MainViewModel
 ) {
+    // Get SettingsViewModel instance
+    val settingsViewModel: SettingsViewModel = viewModel()
+
+    // Collect settings as state
+    val settings by settingsViewModel.settings.collectAsState()
+
+    // State to control showing/hiding the settings dialog
+    var showSettingsDialog by remember { mutableStateOf(false) }
+
     val context = LocalContext.current
     var selectedTabIndex by remember { mutableStateOf(0) }
     val tabs = listOf("Favorites", "Notes")
 
-    val notes by viewModel.notes.collectAsState(initial = emptyList())  //new - get notes from ViewModel database, not local state
+    val notes by viewModel.notes.collectAsState(initial = emptyList())
     var showAddNoteDialog by remember { mutableStateOf(false) }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(0xFFFAFAFA))
-    ) {
-        // Profile Header
-        Surface(
-            modifier = Modifier.fillMaxWidth(),
-            color = Color.White,
-            shadowElevation = 2.dp
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(24.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                // Profile Avatar
-                Box(
-                    modifier = Modifier
-                        .size(80.dp)
-                        .clip(CircleShape)
-                        .background(Color(0xFFF472B6)),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Person,
-                        contentDescription = "Profile",
-                        tint = Color.White,
-                        modifier = Modifier.size(40.dp)
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        "Profile",
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
-                }
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Text(
-                    text = userName,
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1F2937)
-                )
-
-                Spacer(modifier = Modifier.height(8.dp))
-
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(24.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    ProfileStat(
-                        count = likedProducts.size.toString(),
-                        label = "Favorites"
-                    )
-                    ProfileStat(
-                        count = notes.size.toString(),
-                        label = "Notes"
-                    )
-                }
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                OutlinedButton(
-                    onClick = onLogout,
-                    modifier = Modifier.fillMaxWidth(0.6f),
-                    colors = ButtonDefaults.outlinedButtonColors(
-                        contentColor = Color(0xFFF472B6)
-                    ),
-                    shape = RoundedCornerShape(25.dp)
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Logout,
-                        contentDescription = "Logout",
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text("Logout")
-                }
-            }
-        }
-
-        TabRow(
-            selectedTabIndex = selectedTabIndex,
-            containerColor = Color.White,
-            contentColor = Color(0xFFF472B6)
-        ) {
-            tabs.forEachIndexed { index, title ->
-                Tab(
-                    selected = selectedTabIndex == index,
-                    onClick = { selectedTabIndex = index },
-                    text = {
-                        Text(
-                            text = title,
-                            fontWeight = if (selectedTabIndex == index) FontWeight.Bold else FontWeight.Normal
+                },
+                actions = {
+                    IconButton(onClick = { showSettingsDialog = true }) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "Settings",
+                            tint = Color(0xFFF472B6)
                         )
                     }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface
                 )
-            }
+            )
         }
-
-        Box(
+    ) { paddingValues ->
+        Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .background(MaterialTheme.colorScheme.background)
+                .padding(paddingValues)
         ) {
-            when (selectedTabIndex) {
-                0 -> FavoritesSection(
-                    likedProducts = likedProducts,
-                    likedProductIds = likedProductIds,
-                    onToggleLike = onToggleLike,
-                    onAddToCart = onAddToCart,
-                    onProductClick = onProductClick
-                )
-                1 -> NotesSection(
-                    notes = notes,
-                    onAddNote = { showAddNoteDialog = true },
-                    onDeleteNote = { noteId, imagePath ->  //new - now takes noteId AND imagePath
-                        viewModel.deleteNote(noteId, imagePath)  //new - call ViewModel to delete from database
-                    },
-                    context = context
-                )
+            // Profile Header
+            Surface(
+                modifier = Modifier.fillMaxWidth(),
+                color = MaterialTheme.colorScheme.surface,
+                shadowElevation = 2.dp
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    // Profile Avatar
+                    Box(
+                        modifier = Modifier
+                            .size(80.dp)
+                            .clip(CircleShape)
+                            .background(Color(0xFFF472B6)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Person,
+                            contentDescription = "Profile",
+                            tint = Color.White,
+                            modifier = Modifier.size(40.dp)
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text(
+                        text = userName,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(24.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        ProfileStat(
+                            count = likedProducts.size.toString(),
+                            label = "Favorites"
+                        )
+                        ProfileStat(
+                            count = notes.size.toString(),
+                            label = "Notes"
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    OutlinedButton(
+                        onClick = onLogout,
+                        modifier = Modifier.fillMaxWidth(0.6f),
+                        colors = ButtonDefaults.outlinedButtonColors(
+                            contentColor = Color(0xFFF472B6)
+                        ),
+                        shape = RoundedCornerShape(25.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Logout,
+                            contentDescription = "Logout",
+                            modifier = Modifier.size(18.dp)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Logout")
+                    }
+                }
+            }
+
+            TabRow(
+                selectedTabIndex = selectedTabIndex,
+                containerColor = MaterialTheme.colorScheme.surface,
+                contentColor = Color(0xFFF472B6)
+            ) {
+                tabs.forEachIndexed { index, title ->
+                    Tab(
+                        selected = selectedTabIndex == index,
+                        onClick = { selectedTabIndex = index },
+                        text = {
+                            Text(
+                                text = title,
+                                fontWeight = if (selectedTabIndex == index) FontWeight.Bold else FontWeight.Normal
+                            )
+                        }
+                    )
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
+                when (selectedTabIndex) {
+                    0 -> FavoritesSection(
+                        likedProducts = likedProducts,
+                        likedProductIds = likedProductIds,
+                        onToggleLike = onToggleLike,
+                        onAddToCart = onAddToCart,
+                        onProductClick = onProductClick
+                    )
+                    1 -> NotesSection(
+                        notes = notes,
+                        onAddNote = { showAddNoteDialog = true },
+                        onDeleteNote = { noteId, imagePath ->
+                            viewModel.deleteNote(noteId, imagePath)
+                        },
+                        context = context
+                    )
+                }
             }
         }
+    }
+
+    // Settings Dialog
+    if (showSettingsDialog) {
+        SettingsDialog(
+            onDismiss = { showSettingsDialog = false },
+            settings = settings,
+            onUpdateDarkMode = { settingsViewModel.updateDarkMode(it) },
+            onUpdateFontSize = { settingsViewModel.updateFontSize(it) },
+            onUpdateColorBlindMode = { settingsViewModel.updateColorBlindMode(it) },
+            onUpdateReduceAnimations = { settingsViewModel.updateReduceAnimations(it) }
+        )
     }
 
     if (showAddNoteDialog) {
@@ -188,7 +279,7 @@ fun ProfileScreen(
             context = context,
             onDismiss = { showAddNoteDialog = false },
             onSave = { title, content, imagePath ->
-                viewModel.addNote(title, content, imagePath)  //new - call ViewModel to save to database
+                viewModel.addNote(title, content, imagePath)
                 showAddNoteDialog = false
             }
         )
@@ -208,7 +299,7 @@ fun FavoritesSection(
             text = "My Favorites (${likedProducts.size})",
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFF1F2937),
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
@@ -225,12 +316,12 @@ fun FavoritesSection(
                     Text(
                         text = "No favorites yet",
                         fontSize = 18.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
                     )
                     Text(
                         text = "Start exploring and save your favorite products!",
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
                     )
                 }
             }
@@ -259,7 +350,7 @@ fun FavoritesSection(
 fun NotesSection(
     notes: List<Note>,
     onAddNote: () -> Unit,
-    onDeleteNote: (String, String?) -> Unit,  //new - now takes noteId AND imagePath
+    onDeleteNote: (String, String?) -> Unit,
     context: Context
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
@@ -273,7 +364,7 @@ fun NotesSection(
                     text = "My Notes (${notes.size})",
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1F2937)
+                    color = MaterialTheme.colorScheme.onBackground
                 )
             }
 
@@ -292,12 +383,12 @@ fun NotesSection(
                         Text(
                             text = "No notes yet",
                             fontSize = 18.sp,
-                            color = Color.Gray
+                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
                         )
                         Text(
                             text = "Tap the + button to create your first note!",
                             fontSize = 14.sp,
-                            color = Color.Gray
+                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
                         )
                     }
                 }
@@ -308,7 +399,7 @@ fun NotesSection(
                     items(notes) { note ->
                         NoteCard(
                             note = note,
-                            onDelete = { onDeleteNote(note.id, note.imagePath) },  //new - pass both id and imagePath
+                            onDelete = { onDeleteNote(note.id, note.imagePath) },
                             context = context
                         )
                     }
@@ -343,7 +434,9 @@ fun NoteCard(
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(
@@ -360,7 +453,7 @@ fun NoteCard(
                     text = note.title,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1F2937),
+                    color = MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f)
                 )
                 IconButton(
@@ -402,7 +495,7 @@ fun NoteCard(
             Text(
                 text = note.content,
                 fontSize = 14.sp,
-                color = Color.Gray,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
                 maxLines = 3,
                 overflow = TextOverflow.Ellipsis
             )
@@ -412,7 +505,7 @@ fun NoteCard(
             Text(
                 text = dateFormat.format(Date(note.timestamp)),
                 fontSize = 12.sp,
-                color = Color.LightGray
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
             )
         }
     }
@@ -564,7 +657,7 @@ fun AddNoteDialog(
                 savedImagePath?.let { File(it).delete() }
                 onDismiss()
             }) {
-                Text("Cancel", color = Color.Gray)
+                Text("Cancel", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
             }
         }
     )
@@ -606,7 +699,7 @@ fun ProfileStat(
         Text(
             text = label,
             fontSize = 14.sp,
-            color = Color.Gray
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
         )
     }
 }

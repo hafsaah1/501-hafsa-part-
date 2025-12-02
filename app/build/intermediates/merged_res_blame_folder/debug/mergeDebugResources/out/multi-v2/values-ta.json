@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.beautyapp-mergeDebugResources-59:/values-ta/values-ta.xml",
+            "outputFile": "com.example.beautyapp-mergeDebugResources-61:/values-ta/values-ta.xml",
             "map": [
                 {
                     "source": "/Users/auroraa/.gradle/caches/8.10.2/transforms/9bff2ea65dcde0a71599c51ed34e6b41/transformed/material3-release/res/values-ta/values-ta.xml",

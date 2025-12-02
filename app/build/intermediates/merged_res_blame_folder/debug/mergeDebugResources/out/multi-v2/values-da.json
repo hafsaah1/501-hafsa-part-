@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.beautyapp-mergeDebugResources-59:/values-da/values-da.xml",
+            "outputFile": "com.example.beautyapp-mergeDebugResources-61:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "/Users/auroraa/.gradle/caches/8.10.2/transforms/6c838a9c49e701001280d0e5652146fd/transformed/play-services-base-18.0.1/res/values-da/values.xml",

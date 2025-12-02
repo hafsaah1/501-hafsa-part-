@@ -82,6 +82,7 @@ fun WeatherScreen(
         Spacer(modifier = Modifier.height(24.dp))
 
         // Show either Search Bar OR Weather Display Card
+        // - ugh edit to find the error regarding the YT SHORTS
         if (showSearchBar) {
             // Search Bar Card
             Card(
@@ -542,6 +543,7 @@ fun VideoCardPlaceHolder(
     onVideoClick: (String) -> Unit
 ) {
     // UPDATED: Now uses the VideoInfo data class
+    // look into this also -HA
     val beautyVideos = listOf(
         VideoInfo("Foundation Tips", "2 min", "hkQhA6lmDME", R.drawable.foundation),
         VideoInfo("Blush Tutorial", "3 min", "5wx1U64ez14", R.drawable.blush),

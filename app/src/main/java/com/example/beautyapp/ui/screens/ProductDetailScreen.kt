@@ -3,6 +3,7 @@ package com.example.beautyapp.ui.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -16,6 +17,7 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.ImageNotSupported
 import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -28,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.SubcomposeAsyncImage
 import com.example.beautyapp.data.Product
 import com.example.beautyapp.data.ProductColor
+import com.example.beautyapp.utils.parseHexColor  // NEW - import from utils!
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,7 +38,7 @@ fun ProductDetailScreen(
     product: Product,
     isLiked: Boolean,
     onToggleLike: (Int) -> Unit,
-    onAddToCart: (Int) -> Unit,
+    onAddToCart: (Int, ProductColor?) -> Unit,  // UPDATED - added ProductColor parameter!
     onBack: () -> Unit
 ) {
     var selectedShade by remember { mutableStateOf<ProductColor?>(null) }
@@ -48,7 +51,8 @@ fun ProductDetailScreen(
                     IconButton(onClick = onBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back"
+                            contentDescription = "Back",
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 },
@@ -57,12 +61,12 @@ fun ProductDetailScreen(
                         Icon(
                             imageVector = if (isLiked) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
                             contentDescription = "Like",
-                            tint = if (isLiked) Color(0xFFEF4444) else Color.Gray
+                            tint = if (isLiked) Color(0xFFEF4444) else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                         )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.surface
                 )
             )
         }
@@ -78,7 +82,7 @@ fun ProductDetailScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(300.dp)
-                    .background(Color.White),
+                    .background(MaterialTheme.colorScheme.surface),
                 contentAlignment = Alignment.Center
             ) {
                 SubcomposeAsyncImage(
@@ -95,7 +99,7 @@ fun ProductDetailScreen(
                         Icon(
                             imageVector = Icons.Default.ImageNotSupported,
                             contentDescription = "Image not available",
-                            tint = Color.Gray,
+                            tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
                             modifier = Modifier.size(64.dp)
                         )
                     }
@@ -113,7 +117,7 @@ fun ProductDetailScreen(
                     Text(
                         text = "Brand: ${product.brand}",
                         fontSize = 16.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                 }
@@ -122,7 +126,8 @@ fun ProductDetailScreen(
                 Text(
                     text = product.name ?: "Product",
                     fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -144,7 +149,7 @@ fun ProductDetailScreen(
                     Text(
                         text = "Category: ${product.productType}",
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                 }
 
@@ -155,21 +160,21 @@ fun ProductDetailScreen(
                     Text(
                         text = "Star rating: ${product.rating}",
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                 } else {
                     Text(
                         text = "Star rating: unrated",
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                 }
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                // Add to Cart Button
+                // Add to Cart Button - UPDATED to pass selectedShade!
                 Button(
-                    onClick = { onAddToCart(product.id) },
+                    onClick = { onAddToCart(product.id, selectedShade) },  // UPDATED!
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp),
@@ -197,7 +202,7 @@ fun ProductDetailScreen(
                 }
 
                 Spacer(modifier = Modifier.height(24.dp))
-                Divider()
+                HorizontalDivider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f))  // FIXED - HorizontalDivider!
                 Spacer(modifier = Modifier.height(16.dp))
 
                 // Color Variants - REAL COLORS FROM API
@@ -205,7 +210,8 @@ fun ProductDetailScreen(
                     Text(
                         text = "Available Shades (${product.productColors.size})",
                         fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
 
                     Spacer(modifier = Modifier.height(12.dp))
@@ -225,12 +231,12 @@ fun ProductDetailScreen(
                     Text(
                         text = "No shade information available",
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                 }
 
                 Spacer(modifier = Modifier.height(24.dp))
-                Divider()
+                HorizontalDivider(color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f))  // FIXED - HorizontalDivider!
                 Spacer(modifier = Modifier.height(16.dp))
 
                 // Description
@@ -238,20 +244,21 @@ fun ProductDetailScreen(
                     Text(
                         text = "Description:",
                         fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
                         text = product.description,
                         fontSize = 14.sp,
-                        color = Color.Gray,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
                         lineHeight = 20.sp
                     )
                 } else {
                     Text(
                         text = "No description available",
                         fontSize = 14.sp,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                 }
 
@@ -269,7 +276,11 @@ fun ShadeButton(
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.clickable { onClick() }
+        modifier = Modifier.clickable(
+            onClick = onClick,
+            indication = rememberRipple(),
+            interactionSource = remember { MutableInteractionSource() }
+        )
     ) {
         Box(
             modifier = Modifier
@@ -300,27 +311,11 @@ fun ShadeButton(
             Text(
                 text = color.colourName,
                 fontSize = 10.sp,
-                color = Color.Gray,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
                 maxLines = 2
             )
         }
     }
 }
 
-fun parseHexColor(hexString: String?): Color {
-    if (hexString.isNullOrEmpty()) return Color.Gray
-
-    return try {
-        val cleanHex = hexString.removePrefix("#")
-        val colorInt = cleanHex.toLong(16)
-
-        if (cleanHex.length == 6) {
-            // Add alpha channel
-            Color(0xFF000000 or colorInt)
-        } else {
-            Color(colorInt)
-        }
-    } catch (e: Exception) {
-        Color.Gray
-    }
-}
+// REMOVED - parseHexColor function deleted! Now imported from utils!

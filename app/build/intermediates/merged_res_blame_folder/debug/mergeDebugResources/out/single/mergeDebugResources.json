@@ -1,106 +1,106 @@
 [
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.beautyapp-debug-63:/drawable_facebook_logo.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/facebook_logo.png"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.beautyapp-debug-63:/drawable_lipstick.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/lipstick.png"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.beautyapp-debug-63:/drawable_google_logo.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/google_logo.png"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/xml_backup_rules.xml.flat",
-        "source": "com.example.beautyapp-main-63:/xml/backup_rules.xml"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/drawable_google_logo.png.flat",
-        "source": "com.example.beautyapp-main-63:/drawable/google_logo.png"
+        "merged": "com.example.beautyapp-debug-63:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.beautyapp-debug-63:/drawable_blush.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/blush.png"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.beautyapp-debug-63:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.beautyapp-main-65:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.beautyapp-debug-63:/drawable_foundation.png.flat",
+        "source": "com.example.beautyapp-main-65:/drawable/foundation.png"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.beautyapp-main-63:/xml/data_extraction_rules.xml"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/drawable_facebook_logo.png.flat",
-        "source": "com.example.beautyapp-main-63:/drawable/facebook_logo.png"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/layout_mainlayout.xml.flat",
-        "source": "com.example.beautyapp-main-63:/layout/mainlayout.xml"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.beautyapp-debug-63:/layout_mainlayout.xml.flat",
+        "source": "com.example.beautyapp-main-65:/layout/mainlayout.xml"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.beautyapp-main-63:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.beautyapp-main-63:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/drawable_lipstick.png.flat",
-        "source": "com.example.beautyapp-main-63:/drawable/lipstick.png"
+        "merged": "com.example.beautyapp-debug-63:/xml_backup_rules.xml.flat",
+        "source": "com.example.beautyapp-main-65:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/drawable_foundation.png.flat",
-        "source": "com.example.beautyapp-main-63:/drawable/foundation.png"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.beautyapp-debug-61:/drawable_blush.png.flat",
-        "source": "com.example.beautyapp-main-63:/drawable/blush.png"
+        "merged": "com.example.beautyapp-debug-63:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.beautyapp-main-65:/mipmap-xhdpi/ic_launcher_foreground.webp"
     }
 ]

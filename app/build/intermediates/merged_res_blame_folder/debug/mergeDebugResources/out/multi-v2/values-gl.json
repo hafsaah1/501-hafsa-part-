@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.beautyapp-mergeDebugResources-59:/values-gl/values-gl.xml",
+            "outputFile": "com.example.beautyapp-mergeDebugResources-61:/values-gl/values-gl.xml",
             "map": [
                 {
                     "source": "/Users/auroraa/.gradle/caches/8.10.2/transforms/f79c7e3ca9dc978524487365442c3620/transformed/core-1.15.0/res/values-gl/values-gl.xml",

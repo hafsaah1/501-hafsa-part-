@@ -96,7 +96,8 @@ dependencies {
     // Image Loading - Coil
     implementation("io.coil-kt:coil-compose:2.5.0")
 
-
+    // Add this for observeAsState support ⬇️
+    implementation("androidx.compose.runtime:runtime-livedata:1.9.5")
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
@@ -108,6 +109,9 @@ dependencies {
     // YouTube Player
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:13.0.0")
 
+// DataStore - Modern way to store key-value pairs (replaces SharedPreferences)
+// Used to save user settings like theme, font size, etc.
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

@@ -1,11 +1,13 @@
 package com.example.beautyapp.ui.components
 
-
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -29,14 +31,14 @@ fun FilterBottomSheet(
 ) {
     ModalBottomSheet(
         onDismissRequest = onDismiss,
-        containerColor = Color.White
+        containerColor = MaterialTheme.colorScheme.surface  // FIXED - theme-aware!
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            // Header (Stays the same)
+            // Header
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -45,59 +47,64 @@ fun FilterBottomSheet(
                 Text(
                     text = "Filters",
                     fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface  // FIXED - theme-aware!
                 )
                 IconButton(onClick = onDismiss) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Close"
+                        contentDescription = "Close",
+                        tint = MaterialTheme.colorScheme.onSurface  // FIXED - theme-aware!
                     )
                 }
             }
 
-            //  ************************************************
-            //  START OF NEW TAB CODE
-            //  ************************************************
-
-            // 1. Add state to remember which tab is selected
             var selectedTabIndex by remember { mutableStateOf(0) }
             val tabs = listOf("Brand", "Product Type")
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 2. Add the TabRow
             TabRow(
                 selectedTabIndex = selectedTabIndex,
-                containerColor = Color.White,
-                contentColor = Color(0xFFF472B6) // Your app's pink color
+                containerColor = MaterialTheme.colorScheme.surface,  // FIXED - theme-aware!
+                contentColor = Color(0xFFF472B6)
             ) {
                 tabs.forEachIndexed { index, title ->
                     Tab(
                         selected = selectedTabIndex == index,
                         onClick = { selectedTabIndex = index },
-                        text = { Text(text = title) }
+                        text = {
+                            Text(
+                                text = title,
+                                color = if (selectedTabIndex == index)
+                                    Color(0xFFF472B6)
+                                else
+                                    MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)  // FIXED!
+                            )
+                        }
                     )
                 }
             }
 
-            // 3. This Box will hold the correct LazyColumn
             Box(
                 modifier = Modifier
-                    .weight(1f) // This makes it fill the available space
+                    .weight(1f)
                     .fillMaxWidth()
             ) {
-                // 4. Use `when` to show the correct list
                 when (selectedTabIndex) {
-
-                    // --- TAB 0: BRANDS ---
                     0 -> LazyColumn(
                         modifier = Modifier.fillMaxSize(),
-                        contentPadding = PaddingValues(top = 8.dp) // Add padding
+                        contentPadding = PaddingValues(top = 8.dp)
                     ) {
                         items(brands) { brand ->
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
+                                    .clickable(
+                                        onClick = { onBrandToggle(brand) },
+                                        indication = rememberRipple(),
+                                        interactionSource = remember { MutableInteractionSource() }
+                                    )
                                     .padding(vertical = 4.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
@@ -105,12 +112,14 @@ fun FilterBottomSheet(
                                     checked = selectedBrands.contains(brand),
                                     onCheckedChange = { onBrandToggle(brand) },
                                     colors = CheckboxDefaults.colors(
-                                        checkedColor = Color(0xFFF472B6)
+                                        checkedColor = Color(0xFFF472B6),
+                                        uncheckedColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)  // FIXED!
                                     )
                                 )
                                 Text(
                                     text = brand,
                                     fontSize = 16.sp,
+                                    color = MaterialTheme.colorScheme.onSurface,  // FIXED!
                                     modifier = Modifier.padding(start = 8.dp)
                                 )
                             }
@@ -120,15 +129,19 @@ fun FilterBottomSheet(
                         }
                     }
 
-                    // --- TAB 1: PRODUCT TYPES ---
                     1 -> LazyColumn(
                         modifier = Modifier.fillMaxSize(),
-                        contentPadding = PaddingValues(top = 8.dp) // Add padding
+                        contentPadding = PaddingValues(top = 8.dp)
                     ) {
                         items(productTypes) { type ->
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
+                                    .clickable(
+                                        onClick = { onProductTypeToggle(type) },
+                                        indication = rememberRipple(),
+                                        interactionSource = remember { MutableInteractionSource() }
+                                    )
                                     .padding(vertical = 4.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
@@ -136,12 +149,14 @@ fun FilterBottomSheet(
                                     checked = selectedProductTypes.contains(type),
                                     onCheckedChange = { onProductTypeToggle(type) },
                                     colors = CheckboxDefaults.colors(
-                                        checkedColor = Color(0xFFF472B6)
+                                        checkedColor = Color(0xFFF472B6),
+                                        uncheckedColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)  // FIXED!
                                     )
                                 )
                                 Text(
                                     text = type.replaceFirstChar { it.uppercase() },
                                     fontSize = 16.sp,
+                                    color = MaterialTheme.colorScheme.onSurface,  // FIXED!
                                     modifier = Modifier.padding(start = 8.dp)
                                 )
                             }
@@ -152,12 +167,7 @@ fun FilterBottomSheet(
                     }
                 }
             }
-            //  ************************************************
-            //  END OF NEW TAB CODE
-            //  ************************************************
 
-
-            // Action Buttons (Stays the same)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -168,7 +178,10 @@ fun FilterBottomSheet(
                     onClick = onClearFilters,
                     modifier = Modifier.weight(1f)
                 ) {
-                    Text(text = "Clear All")
+                    Text(
+                        text = "Clear All",
+                        color = MaterialTheme.colorScheme.onSurface  // FIXED!
+                    )
                 }
 
                 Button(

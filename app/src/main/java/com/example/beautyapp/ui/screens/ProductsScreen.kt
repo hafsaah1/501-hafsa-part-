@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -48,6 +49,8 @@ fun ProductsScreen(
                     Text(
                         text = "Products",
                         textAlign = TextAlign.Center,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface,  // Theme-aware!
                         modifier = Modifier.fillMaxWidth()
                     )
                 },
@@ -57,7 +60,7 @@ fun ProductsScreen(
                         badge = {
                             if (hasActiveFilters) {
                                 Badge(
-                                    containerColor = Color(0xFFF472B6)
+                                    containerColor = Color(0xFFF472B6)  // Brand color
                                 ) {
                                     val count = selectedBrands.size + selectedProductTypes.size
                                     Text(text = count.toString())
@@ -68,7 +71,8 @@ fun ProductsScreen(
                         IconButton(onClick = { showFilterSheet = true }) {
                             Icon(
                                 imageVector = Icons.Default.FilterList,
-                                contentDescription = "Filter"
+                                contentDescription = "Filter",
+                                tint = MaterialTheme.colorScheme.onSurface  // Theme-aware!
                             )
                         }
                     }
@@ -85,7 +89,7 @@ fun ProductsScreen(
                     Spacer(modifier = Modifier.width(8.dp))
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.surface  // Theme-aware!
                 )
             )
         }
@@ -97,7 +101,7 @@ fun ProductsScreen(
         ) {
             if (loading) {
                 CircularProgressIndicator(
-                    color = Color(0xFFF472B6),
+                    color = Color(0xFFF472B6),  // Brand color
                     modifier = Modifier.align(Alignment.Center)
                 )
             } else if (products.isEmpty()) {
@@ -108,12 +112,15 @@ fun ProductsScreen(
                     Text(
                         text = "No products found",
                         style = MaterialTheme.typography.bodyLarge,
-                        color = Color.Gray
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)  // Theme-aware!
                     )
                     if (hasActiveFilters) {
                         Spacer(modifier = Modifier.height(8.dp))
                         TextButton(onClick = onClearFilters) {
-                            Text(text = "Clear filters")
+                            Text(
+                                text = "Clear filters",
+                                color = Color(0xFFF472B6)  // Brand color
+                            )
                         }
                     }
                 }
